@@ -1,0 +1,2 @@
+Res1 Res2 NSingle NDouble Method
+63 92 51 42 3
