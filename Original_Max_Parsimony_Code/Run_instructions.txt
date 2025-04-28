@@ -1,0 +1,104 @@
+Instructions
+
+The scripts included here predict coevolving pairs of amino acids in a protein based on maximum parsimony-based ancestral reconstruction followed by the identification of pairs with a depletion on separate changes when compared to their number of concurrent changes.
+
+Software requirements:
+ - Java (> version 20)
+ - R
+
+Input requirements:
+ - A PHYLIP format multiple sequence alignment (MSA)
+ - A Newick format phylogenetic tree with the same IDs
+
+An example run script for UNIX based operating systems with data has been provided (run_full_test.sh) 
+
+Process:
+
+1. Run the "MPS module" mpsAnalysis_Reconstruction_Tracking.jar to reconstruct the sequence states throughout the tree.
+   The module requires an input file with the following three line format:
+	MSA_ALIGNMENT_FILE path/to/alignment.phy
+	TREE_FILE path/to/tree.txt
+	OUTPUT_FILE path/to/outputprefix
+   It is executed as follows:
+	java -jar "mps_code/dist/mpsAnalysis_Reconstruction_Tracking.jar" inputfile.ctl > path/to/runtime.log
+   It will produce 4 output files:
+	path/to/outputprefix.binary_nodes.tab
+		Matrix of changes at nodes throughout the tree
+	path/to/outputprefix.binary_branches.tab
+		Matrix of changes at branches throughout the tree
+	path/to/outputprefix.all_nodes_states.tab
+		The inferred states at nodes in the tree
+	path/to/outputprefix.ancestor_nodes_states.tab
+		Counts of inferred states at nodes in the tree
+
+2. Run the branches/nodes based method(s) using a chosen statistical model to predict pairs with a depletion of separate changes when compared to their number of concurrent changes.
+   The R scripts require command line arguments in the following order:
+	1. path/to/outputprefix.binary_nodes.tab or path/to/outputprefix.binary_branches.tab
+	2. path/to/outputprefix
+	3. an alpha threshold e.g. 0.01
+	4. 4 Comma separated list of statistical models to run:
+		# 1: Linear 
+		# 2: Logarithmic
+		# 3: Box-Cox Transform
+		# 4: Poisson Regression
+		# 5: Negative Binomial
+		# 6: Poisson GAM
+		# 7: Negative Binomial GAM
+   It is executed as follows (example for both branches and node based calculations using the Logarithmic and Box-Cox Transform for predictions):
+	Rscript --vanilla scripts/covariation_branches_model.R path/to/outputprefix.binary_branches.tab path/to/outputprefix_branches 0.01 2,3
+	Rscript --vanilla scripts/covariation_nodes_model.R path/to/outputprefix.binary_nodes.tab path/to/outputprefix_nodes 0.01 2,3
+
+   Each will produce 2 output files:
+	path/to/outputprefix_branches_all_outliers.txt / path/to/outputprefix_nodes_all_outliers.txt
+		A space delimited file containing all of the outlier pairs with their separate and concurrent changes throughout the tree in the format:
+		"Residue coord 1" "Residue coord 2" "# Separate" "# Concurrent" "Method"
+		Method is numeric and will refer to the statistical models requested.
+	path/to/outputprefix_branches_predictions.txt / path/to/outputprefix_nodes_predictions.txt
+		A space delimited file containing only the outlier pairs that pass the alpha threshold with their separate and concurrent changes throughout the tree in the format:
+		"Residue coord 1" "Residue coord 2" "# Separate" "# Concurrent" "Method"
+		Method is numeric and will refer to the statistical models requested.
+
+3. Run the "MPS module" mpsAnalysis_Reconstruction_Tracking.jar to reconstruct the sequence states for predicted coevolving pairs throughout the tree. It can be run on predictions from either the branches or nodes methods or for any subset of pairs.
+   The module requires an input file with the following four line format (example for branches predictions):
+	MSA_ALIGNMENT_FILE path/to/alignment.phy
+	TREE_FILE path/to/tree.txt
+	OUTPUT_FILE path/to/outputprefix_second
+	PAIRS_FILE path/to/outputprefix_branches_predictions.txt
+	
+   It is executed as follows:
+	java -jar "mps_code/dist/mpsAnalysis_Reconstruction_Tracking.jar" inputfile2.ctl > path/to/runtime2.log
+   It will produce 2 output files:
+	path/to/outputprefix_second.pairs_all_nodes_states.tab
+		The inferred states at nodes in the tree for the predicted coevolving pairs
+	path/to/outputprefix_second.pairs_ancestor_nodes_states.tab
+		Counts of inferred states at nodes in the tree for the predicted coevolving pairs
+
+4. Run a filter to remove predictions that may be based on prolific "gaps" in regions of the MSA.
+   The R script requires command line arguments in the following order (example for branches predictions):
+	1. path/to/alignment.phy
+	2. path/to/outputprefix_branches_predictions.txt
+	3. path/to/outputfile.tsv
+   It is executed as follows:
+	Rscript --vanilla scripts/gap_filter.R path/to/alignment.phy path/to/outputprefix_branches_predictions.txt path/to/outputfile.tsv
+   It will produce a single output file:
+	 path/to/outputfile.tsv
+		A tab separated file containing the coordinates of pairs with no more than 20% gaps in the alignment at those positions
+		
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+	seqret -sequence 1aoeA.phy -outseq 1aoeA_seq.phy -osformat2 phylipseq -auto
+	seqret -sequence 1aoeA.phy -outseq 1aoeA_seq.phy -osformat2 phylip -auto
+	seqret -sequence 1aoeA.phy -outseq 1aoeA_seq.phy -osformat2 phylip -sequential -idonly -nointernalgaps -auto
+	seqret -sequence 1aoeA.phy -outseq 1aoeA_seq.phy -osformat2 phylipseq -nointernalgaps -auto

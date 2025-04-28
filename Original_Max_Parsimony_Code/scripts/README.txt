@@ -1,0 +1,1 @@
+Due to the way that the binary data matrices are printed in the simulation script and the ancestral reconstruction executable, the simulated matrices should be transposed before using the scripts to predict coevolving positions.
