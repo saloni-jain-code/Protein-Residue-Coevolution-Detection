@@ -1,0 +1,51 @@
+Important! Information for the program starts after the double @ signs. 
+Please do not include such a pattern before the designated start site!
+
+Last updated 190317 - May the luck of the Irish help!
+
+## followed by number of organisms
+
+Residue information indicated in this fashion, separated by commas: 
+0 - Residue Number
+1- Identity (group)
+2- Identity (residue)
+3- Conservation (group)
+4- Convservation (residue) - this feature not yet implemented
+# characters for a particular value indicate wildcard, with boundaries defined by the program.
+Values lower than the minimum amount of conservation will be converted to the minimum
+
+@@START Molecule Definition
+##
+>A
+>B
+>C
+>D
+>E
+@@END Molecule Defintion
+
+The second block of information to follow contains parameters to define mutual information between residue pairs.
+
+** Format of parameters for generating mutual information distributions **
+
+Following MI# symbol (defining this as the MI block), an array of numbers separated by a comma:
+
+0 - Iterations for random generation of mutual information
+1 - Percentage 0 - 100% for threshold of fit for MI value: 
+2 - Multiplier for stdev MI
+
+This block of code will also initate the population of all remaining residues in the 5 molecule aboves - thus, molecule definition should always preceed MI definition.
+
+Format for each resiude with mutual information (with order of listing translating to order of priority, if necessary:
+
+0 - Molecule
+1 - Residue
+2 - Interacting molecule
+3 - Interacting residue
+4 - Mutual Information (100%) target
+
+Note: There should never be interactions between A and E, or B and D (E and D are non-shared partners - molecule C plays this role)
+
+@@START Mutual Information Defintion
+MI#1, 1, 1
+
+@@END
