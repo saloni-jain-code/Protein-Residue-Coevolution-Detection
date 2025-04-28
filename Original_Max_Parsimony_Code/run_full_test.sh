@@ -1,7 +1,7 @@
 #!/bin/bash
 # This file runs the complete pipeline for coevolution detection on an alignment and tree for sequences related
 # to the PDB entry 1AOE, taken from the PSICOV paper, Jones et al. (2012) https://academic.oup.com/bioinformatics/article/28/2/184/198108
-data_dir="C_300_aces"
+data_dir="B_200_aces"
 for statistical_model in {1..7}
 do
     echo Running statistical model: $statistical_model
@@ -11,8 +11,8 @@ do
     mkdir outputs/$data_dir/$statistical_model
     # Input is a PHYLIP sequence alignment and a Newick phylogenetic tree produced from it
     # These must be entered into a ctl file as follows
-    echo "MSA_ALIGNMENT_FILE $data_dir/1aoeA.phy" > 1aoeA.ctl
-    echo "TREE_FILE $data_dir/1aoeA.txt" >> 1aoeA.ctl
+    echo "MSA_ALIGNMENT_FILE ../aCES_data/$data_dir/1aoeA.phy" > 1aoeA.ctl
+    echo "TREE_FILE ../aCES_data/$data_dir/1aoeA.txt" >> 1aoeA.ctl
     echo "OUTPUT_FILE outputs/$data_dir/$statistical_model/mps_1aoeA" >> 1aoeA.ctl
 
     # Create log output folder
@@ -34,8 +34,8 @@ do
     # Input is the same PHYLIP sequence alignment and a Newick phylogenetic tree produced from it
     # This time a set of tab delimited predicted coevolving pairs are supplies
     # These must be entered into a ctl file as follows
-    echo "MSA_ALIGNMENT_FILE $data_dir/1aoeA.phy" > 1aoeA.ctl
-    echo "TREE_FILE $data_dir/1aoeA.txt" >> 1aoeA.ctl
+    echo "MSA_ALIGNMENT_FILE ../aCES_data/$data_dir/1aoeA.phy" > 1aoeA.ctl
+    echo "TREE_FILE ../aCES_data/$data_dir/1aoeA.txt" >> 1aoeA.ctl
     echo "OUTPUT_FILE outputs/$data_dir/$statistical_model/mps2_1aoeA" >> 1aoeA.ctl
     echo "PAIRS_FILE outputs/$data_dir/$statistical_model/1aoeA_overlap_predictions.txt" >> 1aoeA.ctl
 
