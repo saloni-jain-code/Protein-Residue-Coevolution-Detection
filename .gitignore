@@ -1,0 +1,7 @@
+*.class
+Everything_aCES/aces2
+Everything_aCES/aCES_Input
+Original_Max_Parsimony_Code/logs
+*.jar
+.DS_Store
+*.ctl
