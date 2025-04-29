@@ -1,0 +1,3 @@
+Res1 Res2 NSingle NDouble Method
+169 39 0 14 7
+179 49 0 13 7
