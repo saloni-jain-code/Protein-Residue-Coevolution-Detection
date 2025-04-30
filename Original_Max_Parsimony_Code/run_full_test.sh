@@ -1,7 +1,7 @@
 #!/bin/bash
 # This file runs the complete pipeline for coevolution detection on an alignment and tree for sequences related
 # to the PDB entry 1AOE, taken from the PSICOV paper, Jones et al. (2012) https://academic.oup.com/bioinformatics/article/28/2/184/198108
-data_dir="D_500_aces"
+data_dir="E_100_aces"
 for statistical_model in {1..7}
 do
     echo Running statistical model: $statistical_model
