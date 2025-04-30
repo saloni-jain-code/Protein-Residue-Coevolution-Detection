@@ -1,0 +1,222 @@
+msa_Reader.sequences: {1=LHQR, 10=LSCR, 2=LHQR, 3=LHQQ, 4=LHQI, 5=LHQR, 6=LHQQ, 7=LHQQ, 8=LHQQ, 9=LHQY, N1=LHQR, N2=LHQR, N3=LHQQ, N4=LHQY, N5=LHQQ, N6=LHQQ, N7=LHQQ, N8=LHQQ}
+Read Newick string from file: (S5:0.000000,(((S9:0.396228,S4:0.766777)N4:0.57796...3:0.281764,S2:0.000000)N2:0.000000,S1:0.000000)N1;
+Starting to parse Newick string...
+Found N1 at position 213
+Detected N1 in tree: true
+Connected leaf S5 to Node1
+Connected leaf S9 to Node4
+Connected leaf S4 to Node4
+Found node label: N4 for node Node4
+Connected N4 to Node3
+Connected leaf S8 to Node7
+Connected leaf S6 to Node7
+Found node label: N7 for node Node7
+Connected N7 to Node6
+Connected leaf S7 to Node6
+Found node label: N6 for node Node6
+Connected N6 to Node5
+Connected leaf S10 to Node8
+Connected leaf S3 to Node8
+Found node label: N8 for node Node8
+Connected N8 to Node5
+Found node label: N5 for node Node5
+Connected N5 to Node3
+Found node label: N3 for node Node3
+Connected N3 to Node2
+Connected leaf S2 to Node2
+Found node label: N2 for node Node2
+Connected N2 to Node1
+Connected leaf S1 to Node1
+Found node label: N1 for node Node1
+Tree structure:
+- N1 (Children: 3), Parent: null)
+  - S5 (Children: 0), Parent: N1)
+  - N2 (Children: 2), Parent: N1)
+    - N3 (Children: 2), Parent: N2)
+      - N4 (Children: 2), Parent: N3)
+        - S9 (Children: 0), Parent: N4)
+        - S4 (Children: 0), Parent: N4)
+      - N5 (Children: 2), Parent: N3)
+        - N6 (Children: 2), Parent: N5)
+          - N7 (Children: 2), Parent: N6)
+            - S8 (Children: 0), Parent: N7)
+            - S6 (Children: 0), Parent: N7)
+          - S7 (Children: 0), Parent: N6)
+        - N8 (Children: 2), Parent: N5)
+          - S10 (Children: 0), Parent: N8)
+          - S3 (Children: 0), Parent: N8)
+    - S2 (Children: 0), Parent: N2)
+  - S1 (Children: 0), Parent: N1)
+Tree parsing complete. Found 18 nodes.
+Root node is: N1
+Tree solved with 18 nodes
+NODE RELATIONSHIPS:
+Node:S3 - Children: []
+Node:S4 - Children: []
+Node:S5 - Children: []
+Node:S6 - Children: []
+Node:N1 - Children: [objects.TreeObject$TrieNode@6f539caf, objects.TreeObject$TrieNode@79fc0f2f, objects.TreeObject$TrieNode@50040f0c]
+Node:S7 - Children: []
+Node:N2 - Children: [objects.TreeObject$TrieNode@2dda6444, objects.TreeObject$TrieNode@5e9f23b4]
+Node:S8 - Children: []
+Node:N3 - Children: [objects.TreeObject$TrieNode@4783da3f, objects.TreeObject$TrieNode@378fd1ac]
+Node:S9 - Children: []
+Node:N4 - Children: [objects.TreeObject$TrieNode@49097b5d, objects.TreeObject$TrieNode@6e2c634b]
+Node:N5 - Children: [objects.TreeObject$TrieNode@37a71e93, objects.TreeObject$TrieNode@7e6cbb7a]
+Node:N6 - Children: [objects.TreeObject$TrieNode@7c3df479, objects.TreeObject$TrieNode@7106e68e]
+Node:N7 - Children: [objects.TreeObject$TrieNode@7eda2dbb, objects.TreeObject$TrieNode@6576fe71]
+Node:N8 - Children: [objects.TreeObject$TrieNode@76fb509a, objects.TreeObject$TrieNode@300ffa5d]
+Node:S10 - Children: []
+Node:S1 - Children: []
+Node:S2 - Children: []
+Column map contains 18 entries
+Tree has 18 nodes
+After processing: Nodes binary size = 7, Branches binary size = 7
+Column map contains 18 entries
+Reconstructed trajectory: H	H	H	H	H	H	H	H	H	H	H	H	H	H	H	H	H	S
+Ancestor nodes map: H=8
+Nodes binary trajectory: 0 0 0 0 0 0 0
+Branches binary trajectory: 0 0 0 0 0 0 0
+Nodes Binary Array size: 7
+Branches Binary Array size: 7
+Column map contains 18 entries
+Tree has 18 nodes
+After processing: Nodes binary size = 7, Branches binary size = 7
+Column map contains 18 entries
+Reconstructed trajectory: L	L	L	L	L	L	L	L	L	L	L	L	L	L	L	L	L	L
+Ancestor nodes map: L=8
+Nodes binary trajectory: 0 0 0 0 0 0 0
+Branches binary trajectory: 0 0 0 0 0 0 0
+Nodes Binary Array size: 7
+Branches Binary Array size: 7
+Column map contains 18 entries
+Tree has 18 nodes
+After processing: Nodes binary size = 7, Branches binary size = 7
+Column map contains 18 entries
+Reconstructed trajectory: R	R	Q	Y	Q	Q	Q	Q	R	R	Q	I	R	Q	Q	Q	Y	R
+Ancestor nodes map: Q=5	R=2	Y=1
+Nodes binary trajectory: 0 1 1 0 0 0 0
+Branches binary trajectory: 0 1 1 0 0 0 0
+Nodes Binary Array size: 7
+Branches Binary Array size: 7
+Column map contains 18 entries
+Tree has 18 nodes
+After processing: Nodes binary size = 7, Branches binary size = 7
+Column map contains 18 entries
+Reconstructed trajectory: Q	Q	Q	Q	Q	Q	Q	Q	Q	Q	Q	Q	Q	Q	Q	Q	Q	C
+Ancestor nodes map: Q=8
+Nodes binary trajectory: 0 0 0 0 0 0 0
+Branches binary trajectory: 0 0 0 0 0 0 0
+Nodes Binary Array size: 7
+Branches Binary Array size: 7
+Created writer for file: outputs/G_10_aces/7/1aoeA.binary_nodes.tab
+Created writer for file: outputs/G_10_aces/7/1aoeA.binary_branches.tab
+Created writer for file: outputs/G_10_aces/7/1aoeA.all_nodes_states.tab
+Created writer for file: outputs/G_10_aces/7/1aoeA.ancestor_nodes_states.tab
+File prepared: outputs/G_10_aces/7/1aoeA.binary_nodes.tab
+File prepared: outputs/G_10_aces/7/1aoeA.binary_branches.tab
+File prepared: outputs/G_10_aces/7/1aoeA.all_nodes_states.tab
+File prepared: outputs/G_10_aces/7/1aoeA.ancestor_nodes_states.tab
+Added content to buffer for file: outputs/G_10_aces/7/1aoeA.binary_nodes.tab (buffer size: 1)
+Added content to buffer for file: outputs/G_10_aces/7/1aoeA.binary_branches.tab (buffer size: 1)
+Added content to buffer for file: outputs/G_10_aces/7/1aoeA.all_nodes_states.tab (buffer size: 1)
+Added content to buffer for file: outputs/G_10_aces/7/1aoeA.ancestor_nodes_states.tab (buffer size: 1)
+Added content to buffer for file: outputs/G_10_aces/7/1aoeA.binary_nodes.tab (buffer size: 2)
+Added content to buffer for file: outputs/G_10_aces/7/1aoeA.binary_branches.tab (buffer size: 2)
+Added content to buffer for file: outputs/G_10_aces/7/1aoeA.all_nodes_states.tab (buffer size: 2)
+Added content to buffer for file: outputs/G_10_aces/7/1aoeA.ancestor_nodes_states.tab (buffer size: 2)
+Added content to buffer for file: outputs/G_10_aces/7/1aoeA.binary_nodes.tab (buffer size: 3)
+Added content to buffer for file: outputs/G_10_aces/7/1aoeA.binary_branches.tab (buffer size: 3)
+Added content to buffer for file: outputs/G_10_aces/7/1aoeA.all_nodes_states.tab (buffer size: 3)
+Added content to buffer for file: outputs/G_10_aces/7/1aoeA.ancestor_nodes_states.tab (buffer size: 3)
+Added content to buffer for file: outputs/G_10_aces/7/1aoeA.binary_nodes.tab (buffer size: 4)
+Added content to buffer for file: outputs/G_10_aces/7/1aoeA.binary_branches.tab (buffer size: 4)
+Added content to buffer for file: outputs/G_10_aces/7/1aoeA.all_nodes_states.tab (buffer size: 4)
+Added content to buffer for file: outputs/G_10_aces/7/1aoeA.ancestor_nodes_states.tab (buffer size: 4)
+Writing 4 lines to outputs/G_10_aces/7/1aoeA.binary_nodes.tab
+Successfully closed file: outputs/G_10_aces/7/1aoeA.binary_nodes.tab
+Writing 4 lines to outputs/G_10_aces/7/1aoeA.binary_branches.tab
+Successfully closed file: outputs/G_10_aces/7/1aoeA.binary_branches.tab
+Writing 4 lines to outputs/G_10_aces/7/1aoeA.all_nodes_states.tab
+Successfully closed file: outputs/G_10_aces/7/1aoeA.all_nodes_states.tab
+Writing 4 lines to outputs/G_10_aces/7/1aoeA.ancestor_nodes_states.tab
+Successfully closed file: outputs/G_10_aces/7/1aoeA.ancestor_nodes_states.tab
+msa_Reader.sequences: {1=LHQR, 10=LSCR, 2=LHQR, 3=LHQQ, 4=LHQI, 5=LHQR, 6=LHQQ, 7=LHQQ, 8=LHQQ, 9=LHQY, N1=LHQR, N2=LHQR, N3=LHQQ, N4=LHQY, N5=LHQQ, N6=LHQQ, N7=LHQQ, N8=LHQQ}
+Read Newick string from file: (S5:0.000000,(((S9:0.396228,S4:0.766777)N4:0.57796...3:0.281764,S2:0.000000)N2:0.000000,S1:0.000000)N1;
+Starting to parse Newick string...
+Found N1 at position 213
+Detected N1 in tree: true
+Connected leaf S5 to Node1
+Connected leaf S9 to Node4
+Connected leaf S4 to Node4
+Found node label: N4 for node Node4
+Connected N4 to Node3
+Connected leaf S8 to Node7
+Connected leaf S6 to Node7
+Found node label: N7 for node Node7
+Connected N7 to Node6
+Connected leaf S7 to Node6
+Found node label: N6 for node Node6
+Connected N6 to Node5
+Connected leaf S10 to Node8
+Connected leaf S3 to Node8
+Found node label: N8 for node Node8
+Connected N8 to Node5
+Found node label: N5 for node Node5
+Connected N5 to Node3
+Found node label: N3 for node Node3
+Connected N3 to Node2
+Connected leaf S2 to Node2
+Found node label: N2 for node Node2
+Connected N2 to Node1
+Connected leaf S1 to Node1
+Found node label: N1 for node Node1
+Tree structure:
+- N1 (Children: 3), Parent: null)
+  - S5 (Children: 0), Parent: N1)
+  - N2 (Children: 2), Parent: N1)
+    - N3 (Children: 2), Parent: N2)
+      - N4 (Children: 2), Parent: N3)
+        - S9 (Children: 0), Parent: N4)
+        - S4 (Children: 0), Parent: N4)
+      - N5 (Children: 2), Parent: N3)
+        - N6 (Children: 2), Parent: N5)
+          - N7 (Children: 2), Parent: N6)
+            - S8 (Children: 0), Parent: N7)
+            - S6 (Children: 0), Parent: N7)
+          - S7 (Children: 0), Parent: N6)
+        - N8 (Children: 2), Parent: N5)
+          - S10 (Children: 0), Parent: N8)
+          - S3 (Children: 0), Parent: N8)
+    - S2 (Children: 0), Parent: N2)
+  - S1 (Children: 0), Parent: N1)
+Tree parsing complete. Found 18 nodes.
+Root node is: N1
+Tree solved with 18 nodes
+NODE RELATIONSHIPS:
+Node:S3 - Children: []
+Node:S4 - Children: []
+Node:S5 - Children: []
+Node:S6 - Children: []
+Node:N1 - Children: [objects.TreeObject$TrieNode@6f539caf, objects.TreeObject$TrieNode@79fc0f2f, objects.TreeObject$TrieNode@50040f0c]
+Node:S7 - Children: []
+Node:N2 - Children: [objects.TreeObject$TrieNode@2dda6444, objects.TreeObject$TrieNode@5e9f23b4]
+Node:S8 - Children: []
+Node:N3 - Children: [objects.TreeObject$TrieNode@4783da3f, objects.TreeObject$TrieNode@378fd1ac]
+Node:S9 - Children: []
+Node:N4 - Children: [objects.TreeObject$TrieNode@49097b5d, objects.TreeObject$TrieNode@6e2c634b]
+Node:N5 - Children: [objects.TreeObject$TrieNode@37a71e93, objects.TreeObject$TrieNode@7e6cbb7a]
+Node:N6 - Children: [objects.TreeObject$TrieNode@7c3df479, objects.TreeObject$TrieNode@7106e68e]
+Node:N7 - Children: [objects.TreeObject$TrieNode@7eda2dbb, objects.TreeObject$TrieNode@6576fe71]
+Node:N8 - Children: [objects.TreeObject$TrieNode@76fb509a, objects.TreeObject$TrieNode@300ffa5d]
+Node:S10 - Children: []
+Node:S1 - Children: []
+Node:S2 - Children: []
+Created writer for file: outputs/G_10_aces/7/1aoeA.pairs_all_nodes_states.tab
+Created writer for file: outputs/G_10_aces/7/1aoeA.pairs_ancestor_nodes_states.tab
+File prepared: outputs/G_10_aces/7/1aoeA.pairs_all_nodes_states.tab
+File prepared: outputs/G_10_aces/7/1aoeA.pairs_ancestor_nodes_states.tab
+Writing 0 lines to outputs/G_10_aces/7/1aoeA.pairs_all_nodes_states.tab
+Successfully closed file: outputs/G_10_aces/7/1aoeA.pairs_all_nodes_states.tab
+Writing 0 lines to outputs/G_10_aces/7/1aoeA.pairs_ancestor_nodes_states.tab
+Successfully closed file: outputs/G_10_aces/7/1aoeA.pairs_ancestor_nodes_states.tab

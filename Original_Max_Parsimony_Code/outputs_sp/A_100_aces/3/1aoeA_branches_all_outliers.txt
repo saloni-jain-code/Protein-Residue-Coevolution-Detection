@@ -1,0 +1,3 @@
+Res1 Res2 NSingle NDouble Method
+102 79 57 21 3
+79 86 59 25 3

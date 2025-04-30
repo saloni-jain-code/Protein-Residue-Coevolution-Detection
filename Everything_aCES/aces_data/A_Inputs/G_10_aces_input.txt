@@ -1,0 +1,21 @@
+@@START Molecule Definition
+##10
+>A4: M, C, V, I, A, L, D, E, K, R, F, W, Y, T, S, N, Q, H, P, G
+1, #, #, 100, 0
+2, #, #, 90, 0
+3, #, #, 90, 0
+4, #, #, 100, 0
+>B1: M, C, V, I, A, L, D, E, K, R, F, W, Y, T, S, N, Q, H, P, G
+1, #, #, 100, 0
+>C1: M, C, V, I, A, L, D, E, K, R, F, W, Y, T, S, N, Q, H, P, G
+1, #, #, 100, 0
+>D1: M, C, V, I, A, L, D, E, K, R, F, W, Y, T, S, N, Q, H, P, G
+1, #, #, 100, 0
+>E1: M, C, V, I, A, L, D, E, K, R, F, W, Y, T, S, N, Q, H, P, G
+1, #, #, 100, 0
+@@END Molecule Definition
+
+@@START Mutual Information Definition
+MI#1000, 1, 4
+A, 2, A, 3, 100
+@@END Mutual Information Definition

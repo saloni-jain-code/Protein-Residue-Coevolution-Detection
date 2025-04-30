@@ -1,8 +1,7 @@
 #!/bin/bash
 # This file runs the complete pipeline for coevolution detection on an alignment and tree for sequences related
 # to the PDB entry 1AOE, taken from the PSICOV paper, Jones et al. (2012) https://academic.oup.com/bioinformatics/article/28/2/184/198108
-a
-for letter in A B C
+for letter in A C E
 do
     for num_sequences in 100 200 300
     do

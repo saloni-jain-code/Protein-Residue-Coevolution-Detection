@@ -1,8 +1,0 @@
-
-
-========================================= NEW FASTML RUN STARTED ===========================================
-COMMAND: perl FastML.v3.11/www/fastml/FastML_Wrapper.pl --MSA_File /Users/salonijain/Documents/Spring_2025/Genomics_Project/Protein-Residue-Coevolution-Detection/aCES_data/B_300_aces/B_300_aces_output.fasta --outDir /Users/salonijain/Documents/Spring_2025/Genomics_Project/Protein-Residue-Coevolution-Detection/aCES_data/B_300_aces --seqType aa --jointReconstruction --TreeAlg
-FULL RUNNING PARAMETERS (INCLUDING DEFAULTS):
---MSA_File /Users/salonijain/Documents/Spring_2025/Genomics_Project/Protein-Residue-Coevolution-Detection/aCES_data/B_300_aces/B_300_aces_output.fasta --outDir /Users/salonijain/Documents/Spring_2025/Genomics_Project/Protein-Residue-Coevolution-Detection/aCES_data/B_300_aces/ --seqType aa --Tree NA --TreeAlg  --SubMatrix JTT --OptimizeBL YES --UseGamma YES --Alpha  --jointReconstruction  --indelReconstruction BOTH --indelCutOff 0.5
-
-RunFastML: running cd /Users/salonijain/Documents/Spring_2025/Genomics_Project/Protein-Residue-Coevolution-Detection/aCES_data/B_300_aces/; /Users/salonijain/Documents/Spring_2025/Genomics_Project/Protein-Residue-Coevolution-Detection/FastML.v3.11/www/fastml/../../programs/fastml/fastml -s /Users/salonijain/Documents/Spring_2025/Genomics_Project/Protein-Residue-Coevolution-Detection/aCES_data/B_300_aces/B_300_aces_output.fasta -mj -qf -g > /Users/salonijain/Documents/Spring_2025/Genomics_Project/Protein-Residue-Coevolution-Detection/aCES_data/B_300_aces/fastml.std

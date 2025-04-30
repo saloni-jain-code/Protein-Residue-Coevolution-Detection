@@ -29,7 +29,7 @@ convertMsaFormat($CodedMSA,$CodedMSAPhylip,"fasta","phylip");
 #system ($convert_cmd);
 # Run RaxML
 $Model="PROTCAT".$Model if ($Model ne "GTRCAT");
-my $RaxML_cmd="cd $WorkingDir;raxmlHPC -s $CodedMSAPhylip -n $OutTree_Suffix"." -m $Model";
+my $RaxML_cmd="cd $WorkingDir;raxmlHPC -s $CodedMSAPhylip -n $OutTree_Suffix"." -m $Model -p 12345";
 print "$RaxML_cmd\n";
 system ($RaxML_cmd);
 # Bring Back names to tree

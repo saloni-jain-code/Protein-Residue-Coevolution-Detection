@@ -89,3 +89,7 @@ Copyrights
 ==========
     * To modify the code, or use parts of it for other purposes, permission should be requested. Please contact Tal Pupko: talp@post.tau.ac.il
     * Please note that the use of the FastML program is for academic use only
+
+
+FOR ISMAR
+perl FastML.v3.11/www/fastml/FastML_Wrapper.pl --MSA_File /Users/gabrielperez/Desktop/Protein-Residue-Coevolution-Detection/aCES_data_sp/G_10_aces/1aoeA.fasta --outDir /Users/gabrielperez/Desktop/Protein-Residue-Coevolution-Detection/aCES_data_sp/G_10_aces --seqType aa --jointReconstruction --TreeAlg RAxML
