@@ -1,0 +1,3 @@
+statistical_model,precision_old,precision_new,recall_old,recall_new,f1_score_old,f1_score_new,accuracy_old,accuracy_new,true_positives_old,true_positives_new,false_positives_old,false_positives_new,false_negatives_old,false_negatives_new,true_positive_pairs_old,true_positive_pairs_new
+4,0.0,0.0,0.0,0.0,0,0,0.0,0.0,0,0,63,90,24,24,set(),set()
+5,0.0,0.0,0.0,0.0,0,0,0.0,0.0,0,0,60,92,24,24,set(),set()

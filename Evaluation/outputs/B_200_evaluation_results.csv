@@ -1,0 +1,5 @@
+statistical_model,precision_old,precision_new,recall_old,recall_new,f1_score_old,f1_score_new,accuracy_old,accuracy_new,true_positives_old,true_positives_new,false_positives_old,false_positives_new,false_negatives_old,false_negatives_new,true_positive_pairs_old,true_positive_pairs_new
+4,0.0,0.010869565217391304,0.0,0.041666666666666664,0,0.017241379310344827,0.0,0.041666666666666664,0,1,37,91,24,23,set(),"{('85', '88')}"
+5,0.0,0.01098901098901099,0.0,0.041666666666666664,0,0.017391304347826087,0.0,0.041666666666666664,0,1,39,90,24,23,set(),"{('85', '88')}"
+6,0.0,0.038461538461538464,0.0,0.041666666666666664,0,0.04,0.0,0.041666666666666664,0,1,4,25,24,23,set(),"{('85', '88')}"
+7,0.0,0.07142857142857142,0.0,0.041666666666666664,0,0.052631578947368425,0.0,0.041666666666666664,0,1,0,13,24,23,set(),"{('85', '88')}"
