@@ -1,0 +1,130 @@
+W=1	T=1	R=1	M=1	N=1	K=2	L=1	I=1	H=2	E=1	C=1	D=1	A=2
+Q=1	R=3	P=1	M=1	N=1	K=2	L=1	I=2	E=2	C=2	D=1	A=1	Y=1
+W=1
+V=1	S=2	T=2	Q=1	P=1	K=2	L=1	I=1	G=2	H=1	E=2	C=2	D=1	A=1	Y=1
+H=1
+W=1	T=1	Q=3	R=1	P=2	M=3	N=1	K=2	L=2	I=3	G=1	H=2	F=1	C=1	D=1
+W=1	V=2	R=1	P=1	M=1	N=1	K=2	L=1	I=2	G=1	H=1	F=3	C=1	A=1	Y=2
+S=1	Q=1	R=1	N=1
+H=1	T=1	P=1	N=1
+W=2	V=2	S=2	T=1	R=1	P=2	M=1	I=1	H=1	E=2	C=3	D=1	A=2
+H=1
+V=2	S=1	R=1	P=2	M=1	N=1	I=1	G=2	E=1	F=2	C=1	D=1	A=1	Y=2
+W=1	V=1	Q=1	R=1	P=1	M=2	N=2	L=2	I=1	G=2	H=1	E=1	C=1	D=2	Y=2
+C=1
+E=1
+W=1	H=1	E=1	V=1	F=1	P=1
+E=1	F=2	C=1	S=1	D=1	A=1	Q=1	R=1	N=2	K=1	I=1
+C=1
+W=2	V=2	T=2	R=2	P=2	N=1	L=3	I=2	G=3	E=1	F=1	C=2	D=1	A=1	Y=1
+W=1	Q=2	R=1	P=2	M=1	N=2	L=1	I=1	G=3	H=2	E=2	F=1	D=1	A=1	Y=1
+W=2	S=1	Q=1	R=1	P=1	M=1	N=1	K=1	L=2	I=1	H=1	E=1	F=1	C=3	D=2	A=3	Y=3
+F=1
+W=4	V=3	S=6	T=1	Q=5	R=4	P=4	M=3	N=4	K=7	L=1	I=3	G=3	H=2	E=3	F=2	C=2	D=1	A=1	Y=2
+W=3	V=1	S=2	T=1	Q=3	R=2	P=3	M=2	N=1	K=1	L=1	I=2	G=1	E=3	F=2	C=2	D=3	A=2	Y=2
+S=1
+H=1
+I=1
+C=1
+I=1
+H=1	A=1	K=1
+N=1
+E=1
+W=2	G=1	H=1	P=1	N=1	I=1	Y=1
+H=1	E=1	F=1	V=1	S=1	A=1	P=1	M=1	K=1
+C=1	S=1	D=1	R=1	M=1
+E=1	V=1	Q=1	R=1	P=1
+W=1	V=1	S=2	T=2	R=3	P=1	M=1	N=1	K=3	L=1	I=1	E=1	F=3	C=1	D=2	A=1	Y=4
+D=1
+E=1	V=2	F=1	C=1	Q=1	R=1	P=1	M=1	L=2	I=1
+W=1	V=3	S=2	T=1	Q=3	R=1	P=1	M=5	K=2	L=2	I=4	G=1	H=1	E=1	F=1	C=3	D=3	A=2	Y=1
+M=2	L=1
+W=2	V=2	S=1	T=2	Q=1	R=1	M=2	N=1	K=1	I=3	H=1	E=1	C=1	A=1	Y=1
+L=1
+W=1	G=1	H=1	E=1	F=1	V=1	T=1	A=1	K=1
+W=1	T=2	Q=2	P=1	N=2	G=1	H=2	E=1	F=1	C=1	D=1	A=1	Y=2
+D=1
+E=1
+P=1
+W=1	V=2	S=2	Q=2	R=1	P=1	M=1	K=1	L=2	I=1	G=2	H=3	E=2	F=1	C=3	D=1	A=3
+N=1
+W=2	S=3	T=1	R=1	M=1	N=3	K=2	L=1	H=2	E=1	F=1	C=3	Y=1
+G=1	S=1	K=1	Y=1	I=1
+G=1	F=1	C=1	S=1	T=1	M=1
+W=2	V=1	S=2	T=1	Q=2	R=2	P=2	M=1	N=1	K=1	L=1	I=1	H=2	E=1	C=1	D=1	A=2
+S=1
+W=1	S=3	R=3	P=1	N=2	K=2	L=2	I=1	G=2	H=1	E=1	F=1	C=2	D=2	A=2	Y=2
+G=1	D=1	T=1	A=1	M=1	L=1
+W=1	A=1	N=1	L=1	I=1
+W=1	S=2	T=1	R=1	P=1	M=1	N=1	K=1	I=2	G=1	H=1	F=2	C=1	D=2	A=1	Y=1
+G=1	H=1	V=1	C=1	T=1	Q=1	K=1	L=1	I=1	Y=1
+A=1	Q=1	P=1	K=1	I=1
+H=1	N=1	L=1	Y=1
+G=1	W=1	E=1	S=2	D=1	R=1	P=2	M=1	N=1	Y=1	I=1
+W=3	V=3	S=2	T=1	R=2	P=2	N=2	K=1	I=3	G=2	H=3	E=1	C=1	D=1
+V=1
+C=1	S=1	I=1
+W=1	E=1	Q=1	P=1	M=1	K=1	I=1
+W=1	S=1	T=2	R=1	P=2	N=2	K=1	L=1	H=1	E=1	F=1	C=1	A=1
+M=1
+K=1
+W=2	S=1	P=2	M=2	N=2	L=1	I=1	H=1	F=2	C=2	D=1	A=1	Y=1
+H=3	V=1	F=1	C=1	Q=2	A=1	P=2	N=1	K=2	L=2	I=1
+W=1	H=2	T=1	D=1	A=1	P=1	M=1	Y=1
+L=1
+F=1
+C=1
+H=1
+E=1	F=1	V=1	S=1	C=1	D=1	P=1	N=1	K=1	Y=2	I=1
+L=1
+T=1	P=1	N=1	I=1
+M=1
+E=1	N=1
+W=2	S=1	T=1	Q=2	P=1	M=3	N=2	K=2	L=3	I=3	G=2	H=1	E=3	F=2	C=2	D=1	A=1	Y=3
+Y=1
+G=2	E=1	V=1	F=1	C=1	D=2	T=2	A=1	P=1	N=1	I=1
+I=1
+W=3	V=3	T=3	Q=1	R=3	P=1	M=3	N=2	K=2	L=4	I=3	G=3	H=2	E=3	F=1	D=1	A=2	Y=2
+H=1	E=1	V=1	Q=1
+S=1	C=1	T=1
+S=1
+W=1	H=1	E=1	F=1	C=1	D=1	Q=1	R=1	I=1
+W=3	S=2	T=1	Q=1	R=1	M=2	K=1	L=2	I=1	G=2	E=1	C=2	D=1	A=2	Y=1
+F=1
+T=1	D=1	M=1	I=1
+D=1
+V=2	Q=2	R=1	P=1	M=2	N=1	K=1	L=1	H=1	F=1	C=1	D=1	A=1	Y=2
+G=1	W=1	H=1	V=1	C=1	T=1	D=1	A=1	N=1	L=1
+D=1
+W=2	V=1	Q=2	P=1	M=1	N=1	L=3	G=1	H=1	E=2	F=1	D=1	A=2	Y=2
+S=1	Q=1	A=1	P=1
+H=1	E=1	F=1	V=1	C=1	T=1	R=1	P=1	L=1
+V=1
+G=1	W=1	F=1	S=1	T=2	A=1	K=1	L=2	I=1	Y=1
+W=1	V=4	S=2	T=3	Q=5	R=3	P=2	M=6	N=3	K=7	L=6	I=6	G=1	H=3	E=5	F=1	C=3	D=4	A=7	Y=5
+Y=1
+W=2	S=1	T=2	Q=2	R=1	P=2	M=1	N=2	K=2	L=2	I=2	G=2	H=2	E=2	F=1	C=2	D=1
+G=1
+W=1	G=1	H=1	F=1	V=1	S=1	C=1	Q=1	A=1	P=2	K=1	Y=1
+W=1	V=1	S=1	T=1	Q=1	R=1	P=1	M=1	K=2	L=1	G=1	E=2	F=2	C=1	D=2	A=1	Y=1
+W=1	V=3	S=2	T=2	Q=2	P=2	M=2	N=2	K=1	L=2	I=1	G=3	H=2	E=1	F=1	C=3	A=1	Y=2
+V=1
+W=1	H=1	C=1	A=1	Q=1	R=1	M=1	N=1	I=1
+H=1	V=1	Q=1	P=1	N=1	Y=1	I=1
+V=1	T=1	Q=1	R=1	P=1	N=1	K=1	L=1	I=1	E=1	F=2	C=1	Y=1
+G=1	H=1	V=1	T=1	R=2	N=2	K=1	L=1	I=1
+F=1	N=1
+W=1	V=1	S=2	T=1	P=1	N=1	K=1	L=1	H=1	E=1	F=2	C=1	D=1	A=1
+H=1	C=1	I=1
+M=1
+G=1	H=1	E=1	A=1	R=1	L=1	I=1
+N=1
+E=1
+W=1	K=1
+W=1	V=1	S=1	T=2	Q=2	R=1	P=1	M=1	N=2	L=1	I=2	G=3	H=1	E=1	F=1	C=1	D=2	A=1	Y=1
+W=2	V=1	S=2	T=2	Q=4	R=4	P=1	M=2	N=2	K=3	L=3	I=1	G=3	H=1	E=3	F=2	C=2	D=2	A=2	Y=1
+A=1	K=1
+Q=1	K=1
+W=1	E=1	F=2	V=1	C=1	Q=1	R=1	P=2	N=1	L=1	Y=1	I=1
+N=1
+T=1	Q=1	R=1	P=2	M=1	K=1	L=1	I=2	G=2	H=1	E=1	F=2	C=1	A=2

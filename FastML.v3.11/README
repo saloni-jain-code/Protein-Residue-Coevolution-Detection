@@ -81,7 +81,7 @@ Optional parameters:
 EXAMPLE:
 > perl FastML.v3.1/www/fastml/FastML_Wrapper.pl --MSA_File MSA.aln --outDir /home/MSA.FastML --seqType aa --Tree tree.newick
 
-> perl FastML.v3.11/www/fastml/FastML_Wrapper.pl --MSA_File /Users/gabrielperez/Desktop/Protein-Residue-Coevolution-Detection/aCES_data/B_100_aces/1aoeA.fasta --outDir /Users/gabrielperez/Desktop/Protein-Residue-Coevolution-Detection/aCES_data/B_100_aces/ --seqType aa --jointReconstruction --TreeAlg
+> perl FastML.v3.11/www/fastml/FastML_Wrapper.pl --MSA_File /Users/gabrielperez/Desktop/Protein-Residue-Coevolution-Detection/aCES_data/C_300_aces/1aoeA.fasta --outDir /Users/gabrielperez/Desktop/Protein-Residue-Coevolution-Detection/aCES_data/C_300_aces/ --seqType aa --jointReconstruction --TreeAlg
 
 Will reconstruct ancestral sequences (both "joint" and "marginal") based on the proteins MSA in "MSA.aln" and the tree in "tree,newick" and output all results to the diretory "MSA.FastML" at the home directory
 
