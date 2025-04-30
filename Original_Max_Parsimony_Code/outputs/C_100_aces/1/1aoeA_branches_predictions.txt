@@ -1,0 +1,4 @@
+Res1 Res2 NSingle NDouble Method
+48 88 12 11 1
+12 97 19 12 1
+113 30 11 8 1
