@@ -1,1 +1,6 @@
 statistical_model,precision_old,precision_new,recall_old,recall_new,f1_score_old,f1_score_new,accuracy_old,accuracy_new,true_positives_old,true_positives_new,false_positives_old,false_positives_new,false_negatives_old,false_negatives_new,true_positive_pairs_old,true_positive_pairs_new
+2,0.0,0.0,0.0,0.0,0,0,0.0,0.0,0,0,29,71,12,12,set(),set()
+3,0.0,0.0,0.0,0.0,0,0,0.0,0.0,0,0,15,41,12,12,set(),set()
+4,0.0,0.0,0.0,0.0,0,0,0.0,0.0,0,0,18,63,12,12,set(),set()
+5,0.0,0.0,0.0,0.0,0,0,0.0,0.0,0,0,18,61,12,12,set(),set()
+6,0.0,0.0,0.0,0.0,0,0,0.0,0.0,0,0,1,1,12,12,set(),set()
