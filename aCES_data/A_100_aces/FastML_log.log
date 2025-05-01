@@ -1,0 +1,8 @@
+
+
+========================================= NEW FASTML RUN STARTED ===========================================
+COMMAND: perl FastML.v3.11/www/fastml/FastML_Wrapper.pl --MSA_File /Users/gabrielperez/Desktop/Protein-Residue-Coevolution-Detection/aCES_data/A_100_aces/1aoeA.fasta --outDir /Users/gabrielperez/Desktop/Protein-Residue-Coevolution-Detection/aCES_data/A_100_aces --seqType aa --jointReconstruction --TreeAlg
+FULL RUNNING PARAMETERS (INCLUDING DEFAULTS):
+--MSA_File /Users/gabrielperez/Desktop/Protein-Residue-Coevolution-Detection/aCES_data/A_100_aces/1aoeA.fasta --outDir /Users/gabrielperez/Desktop/Protein-Residue-Coevolution-Detection/aCES_data/A_100_aces/ --seqType aa --Tree NA --TreeAlg  --SubMatrix JTT --OptimizeBL YES --UseGamma YES --Alpha  --jointReconstruction  --indelReconstruction BOTH --indelCutOff 0.5
+
+RunFastML: running cd /Users/gabrielperez/Desktop/Protein-Residue-Coevolution-Detection/aCES_data/A_100_aces/; /Users/gabrielperez/Desktop/Protein-Residue-Coevolution-Detection/FastML.v3.11/www/fastml/../../programs/fastml/fastml -s /Users/gabrielperez/Desktop/Protein-Residue-Coevolution-Detection/aCES_data/A_100_aces/1aoeA.fasta -mj -qf -g > /Users/gabrielperez/Desktop/Protein-Residue-Coevolution-Detection/aCES_data/A_100_aces/fastml.std
