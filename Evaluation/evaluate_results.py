@@ -61,12 +61,13 @@ def evaluate_results(filtered_predictions_pairs, MI_pairs):
     - false positives
     - false negatives
     """
+    real_MI_total_pairs = len(MI_pairs) // 2
     true_positive_pairs = filtered_predictions_pairs & MI_pairs
     true_positives = len(true_positive_pairs)
     false_positives = len(filtered_predictions_pairs - MI_pairs)
-    false_negatives = len(MI_pairs - filtered_predictions_pairs)
+    false_negatives = real_MI_total_pairs - true_positives # len(MI_pairs - filtered_predictions_pairs) // 2
 
-    accuracy = true_positives / len(MI_pairs) if len(MI_pairs) else 0
+    accuracy = true_positives / real_MI_total_pairs if real_MI_total_pairs else 0
 
     precision = true_positives / (true_positives + false_positives) if (true_positives + false_positives) else 0
     recall    = true_positives / (true_positives + false_negatives) if (true_positives + false_negatives) else 0
