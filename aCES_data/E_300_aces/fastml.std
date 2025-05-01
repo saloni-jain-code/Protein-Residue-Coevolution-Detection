@@ -1,0 +1,30 @@
+START OF LOG FILE
+END OF LOG FILE
+Using a Gamma model with: 8 discrete categories 
+Amino acid replacement matrix is JTT
+Optimizing branch lengths and alpha (Gamma model) ...
+Optimized bbl & alpha no model parametrs need to be optimaized
+The tree in 'Newick tree format' (with the internal nodes labeled)
+was written to a file name called tree.newick.txt
+The tree in 'ANCESTOR tree format' was written to a file name called tree.ancestor.txt
+in bbAlg
+no codon model
+after bbNodeOrderAlg
+after bbfindBestAVDynProg
+after resize
+after _internalSequences resize
+afetr _bestReconstruction resize
+after bbAlg in findAncestralSequencesGammaJoint()
+in bbAlg::bbReconstructAllPositions
+Gamma model. Branch and Bound.
+Reconstructing position: bbl report size = 0
+tmp = 4.58007e-78
+6040298
+bbl report size = 0
+tmp = 8.91235e-54
+bbl report size = 0
+tmp = 1.13262e-66
+bbl report size = 0
+tmp = 1.05017e-79
+5980298
+bbl report size = 0
