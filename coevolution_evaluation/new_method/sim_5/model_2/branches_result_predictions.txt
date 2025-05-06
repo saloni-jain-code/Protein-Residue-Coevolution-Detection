@@ -1,0 +1,5 @@
+Res1 Res2 NSingle NDouble Method
+4 5 34 57 2
+6 7 41 63 2
+8 9 43 58 2
+16 17 42 55 2

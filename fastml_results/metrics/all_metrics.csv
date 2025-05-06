@@ -1,0 +1,23 @@
+replicate,model,method,precision,recall,f1score,true_positives,false_positives,false_negatives
+Loaded 20 ground truth pairs
+Loaded 3 prediction pairs
+1,2,old,1.0000,0.1500,0.2609,3,0,17
+Loaded 20 ground truth pairs
+Loaded 2 prediction pairs
+1,2,new,1.0000,0.1000,0.1818,2,0,18
+Loaded 20 ground truth pairs
+Loaded 8 prediction pairs
+2,2,old,1.0000,0.4000,0.5714,8,0,12
+Loaded 20 ground truth pairs
+2,2,new,0.0000,0.0000,0.0000,0,0,20
+Loaded 20 ground truth pairs
+Loaded 4 prediction pairs
+3,2,old,1.0000,0.2000,0.3333,4,0,16
+Loaded 20 ground truth pairs
+Loaded 2 prediction pairs
+3,2,new,1.0000,0.1000,0.1818,2,0,18
+Loaded 20 ground truth pairs
+Loaded 1 prediction pairs
+4,2,old,1.0000,0.0500,0.0952,1,0,19
+Loaded 20 ground truth pairs
+4,2,new,0.0000,0.0000,0.0000,0,0,20

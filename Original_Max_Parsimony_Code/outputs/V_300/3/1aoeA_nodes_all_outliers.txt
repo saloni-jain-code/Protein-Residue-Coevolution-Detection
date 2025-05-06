@@ -1,0 +1,4 @@
+Res1 Res2 NSingle NDouble Method
+22 92 46 6 3
+52 62 47 8 3
+62 79 47 7 3

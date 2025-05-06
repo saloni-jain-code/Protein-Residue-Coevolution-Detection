@@ -1,0 +1,4 @@
+Res1 Res2 NSingle NDouble Method
+16 17 102 89 2
+40 41 99 55 2
+48 49 88 84 2

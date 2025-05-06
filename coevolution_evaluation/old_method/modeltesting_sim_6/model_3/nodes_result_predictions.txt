@@ -1,0 +1,4 @@
+Res1 Res2 NSingle NDouble Method
+20 21 58 44 3
+34 35 57 45 3
+40 41 65 39 3

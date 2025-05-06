@@ -1,130 +1,130 @@
-V=1	S=1	T=2	Q=3	R=1	P=1	N=1	L=2	I=4	G=1	H=3	E=2	F=2	C=1	D=1	A=3	Y=1
-G=2	F=1	S=1	T=1	Q=1	P=1	M=1
-W=2	V=2	T=4	Q=1	R=3	P=1	M=1	N=3	L=4	I=3	H=2	E=5	F=4	C=3	D=4	Y=3
-W=1	V=1	S=2	T=1	Q=1	R=2	P=1	N=3	K=3	L=2	I=2	G=4	H=2	F=3	C=2	D=3	A=2	Y=3
-W=1	S=2	T=1	Q=2	R=2	M=1	N=1	K=3	L=2	I=2	G=1	H=1	E=1	F=3	C=1	A=3	Y=5
-W=1	V=2	S=2	T=2	Q=1	P=1	K=3	L=1	I=1	G=1	E=2	F=3	C=2	A=1	Y=1
-W=2	S=2	T=2	Q=2	R=2	P=2	M=1	N=5	K=2	L=1	H=1	E=2	F=3	C=2	D=3	A=1	Y=2
-G=1	E=1	C=1	S=1	R=1	M=2
-W=1	V=1	S=2	T=4	Q=2	R=2	M=3	N=2	K=1	E=1	C=1	D=1	A=3	Y=1
-W=3	V=2	T=2	Q=1	R=2	P=4	M=1	N=1	K=4	L=3	I=2	G=2	H=2	F=2	D=2	A=2	Y=2
-W=1	V=1	S=5	T=4	Q=2	R=4	P=2	M=3	N=5	K=4	L=4	I=2	G=4	H=2	E=3	F=1	C=4	D=4	A=1	Y=5
-W=3	S=2	T=1	Q=2	R=1	P=1	M=3	N=2	K=5	L=2	I=2	G=2	H=1	E=3	F=3	C=4	D=3	A=4	Y=2
-W=1	V=1	T=2	P=1	M=2	N=1	I=1	G=1	H=1	E=1	F=1	C=1	A=1
-W=3	S=3	T=2	Q=2	R=3	P=3	M=2	N=3	K=2	L=1	I=2	G=1	H=1	E=3	F=3	C=1	A=3	Y=2
-W=1	V=1	C=1	T=1	R=1	I=1
-W=3	V=1	S=1	T=2	Q=1	R=1	M=2	N=2	K=3	L=4	I=3	G=3	H=2	E=1	F=3	C=2	D=3	A=5	Y=2
-W=3	V=2	S=3	T=2	Q=1	P=3	M=1	N=1	K=1	L=1	I=1	G=2	H=1	E=3	F=1	A=1	Y=1
-W=2	V=2	S=1	Q=4	R=2	P=5	M=2	N=2	K=1	L=2	I=1	H=2	E=1	F=3	D=2	A=1	Y=1
-W=1	V=1	S=1	C=1	A=1	P=1	I=1	Y=1
-W=3	V=1	S=1	T=3	Q=2	R=1	P=2	M=2	K=1	I=2	G=2	E=1	F=1	C=1	A=3	Y=1
-W=2	V=1	S=1	T=1	Q=1	R=1	M=1	N=1	L=4	I=1	G=3	H=2	E=1	F=2	C=3
-V=1	S=3	T=4	Q=1	R=2	P=1	M=4	N=2	K=2	L=2	I=1	G=1	H=1	E=2	F=3	C=2	D=3	A=2	Y=3
-H=1	E=2	F=1	S=1	Q=1	I=1
-W=4	V=2	S=1	T=3	Q=4	R=2	P=5	M=2	N=1	K=5	L=4	I=3	G=1	H=2	E=2	F=4	C=2	D=1	A=4	Y=2
-W=2	V=2	S=2	T=1	Q=3	P=1	M=2	N=1	L=2	I=1	G=2	H=1	E=3	F=1	C=1	D=1	A=2	Y=4
-W=2	V=3	S=4	T=4	Q=3	R=5	P=6	M=4	N=3	K=3	L=4	I=2	G=2	H=4	E=4	F=2	C=2	D=3	A=4	Y=2
-W=2	V=3	S=2	T=3	Q=1	R=1	P=3	N=4	K=1	L=3	I=1	H=4	E=2	F=3	C=2	A=2	Y=3
-V=2	S=1	Q=1	R=2	P=3	N=2	L=1	I=2	G=1	H=3	F=2	C=1	D=2	A=4
-W=3	V=1	S=4	Q=2	R=2	P=1	M=4	N=1	K=2	L=1	G=1	H=1	E=2	F=1	C=1	D=2	A=3	Y=1
-C=1
-W=1	S=2	Q=1	R=1	P=2	N=3	K=3	L=2	I=1	H=2	E=1	F=1	C=2	D=2	A=3	Y=1
-W=2	V=1	S=3	T=3	R=2	M=1	N=1	K=1	L=2	I=4	G=1	H=1	E=2	F=3	A=1	Y=2
-W=3	V=3	S=2	T=1	Q=1	P=1	M=1	N=4	K=1	L=1	I=2	G=2	F=1	D=1	A=1	Y=1
-W=3	V=3	S=3	T=6	Q=2	R=4	M=3	N=4	K=4	L=4	I=3	G=4	H=7	E=4	F=2	C=3	D=2	A=5	Y=3
-W=2	V=3	S=2	T=2	Q=2	R=1	P=3	M=2	N=2	K=4	L=1	I=1	G=2	H=3	E=4	C=3	D=4	A=2
-W=2	V=1	S=2	R=1	P=1	M=1	K=2	L=1	G=1	H=1	E=2	F=1	C=1	D=1	A=3	Y=1
-W=4	V=5	T=2	R=3	N=1	K=3	L=1	I=3	H=1	E=1	F=3	C=1	D=1	A=2	Y=2
-W=1	V=2	T=2	Q=1	R=1	P=3	N=2	K=1	L=2	I=1	G=3	H=2	E=2	F=1	C=2	D=1	A=1	Y=3
-W=3	V=1	S=3	T=1	Q=2	M=2	N=1	K=3	L=1	I=5	G=2	E=1	F=2	C=1	D=3	A=1	Y=1
-W=2	V=1	S=1	T=1	Q=2	R=1	M=3	N=1	K=1	L=2	I=1	G=1	H=1	E=3	F=3	C=1	D=2	A=2	Y=2
-W=1	H=2	S=1	C=1	D=1	T=1	R=1	P=1	M=1	L=1	Y=1
-W=1	V=1	S=2	T=1	Q=1	R=3	P=2	N=2	L=3	I=3	H=1	E=2	F=2	C=2	D=2	A=2
-W=1	V=2	T=1	Q=1	P=1	M=1	N=1	K=1	L=2	I=2	G=1	H=3	E=1	F=1	D=2	A=1	Y=1
-W=4	V=1	S=1	Q=2	R=2	P=2	M=1	N=2	K=1	L=1	I=5	H=4	E=2	F=2	C=3	D=1	A=3	Y=2
-W=3	V=2	S=2	T=3	Q=4	P=1	M=4	N=1	K=3	L=1	I=2	G=3	H=2	E=2	C=1	D=1	Y=2
-W=4	V=2	T=3	Q=2	R=2	P=2	M=2	N=4	K=5	L=2	I=2	G=4	H=4	E=3	F=1	C=3	D=2	A=3	Y=1
-W=4	V=2	S=5	T=2	Q=2	R=3	P=1	M=4	N=3	K=2	I=4	H=2	E=4	F=3	C=1	D=1	A=3	Y=5
-W=1	H=1	V=1	F=2	S=1	C=1	D=3	R=1	N=1	K=1	L=2	I=1
-W=1	V=1	S=1	R=1	M=2	N=2	K=1	L=1	I=1	E=2	F=1	C=1	A=1	Y=1
-W=1	V=5	S=2	R=1	P=2	M=2	N=2	K=1	L=1	I=1	F=1	C=1	D=2	Y=1
-W=4	V=2	S=3	T=4	Q=4	R=2	P=6	M=4	N=3	K=5	L=3	I=4	G=2	H=4	E=3	F=4	C=3	D=4	A=1
-W=3	V=3	S=1	T=3	Q=3	R=2	P=4	N=6	K=3	L=6	I=3	G=4	H=5	F=1	C=3	D=5	A=3	Y=3
-T=1
-W=1	S=2	T=1	Q=1	R=2	P=1	M=1	N=3	K=2	L=1	I=1	G=1	H=2	E=2	F=2	C=1	D=2	A=1	Y=1
-G=1	E=2	F=1	S=2	T=1	D=2	R=2	M=1	K=1	L=3	I=3	Y=3
-W=2	V=2	Q=1	R=1	P=1	M=2	N=1	L=2	I=2	G=1	H=2	E=1	C=2	D=1	A=2	Y=1
-W=1	H=2	F=1	V=1	C=1	S=1	A=1	R=1	P=1	M=1	L=1	Y=1
-W=2	V=2	S=1	T=2	Q=1	R=3	P=3	M=2	N=3	K=2	L=3	I=2	G=2	H=2	E=5	C=1	D=1	A=3	Y=4
-G=1	W=1	H=1	C=2	D=2	Q=2	M=1	N=3	I=2
-W=3	V=2	S=2	T=1	Q=2	R=3	P=3	M=1	N=3	K=1	L=2	I=2	G=2	F=1	C=2	D=1	A=1	Y=2
-F=1
-W=1	V=2	S=1	P=2	M=2	N=1	K=2	L=1	G=1	E=1	C=1	D=1	A=1
-S=1	T=1	Q=2	R=2	P=1	M=1	N=3	K=3	L=4	G=4	H=3	E=1	C=2	A=2	Y=2
-V=2	S=4	T=2	Q=2	R=1	P=3	M=2	N=1	K=4	L=2	I=2	E=1	F=3	C=1	A=1	Y=3
-W=1	S=1	Q=2	R=2	P=1	M=2	N=1	K=3	L=2	I=1	G=1	E=2	F=1	C=1	D=1	A=2	Y=1
-W=2	S=1	T=2	Q=1	R=1	M=1	N=1	K=2	I=3	G=1	H=1	E=1	F=2	C=1	Y=1
-W=2	V=1	S=1	T=5	Q=2	R=5	P=1	M=2	N=3	K=1	L=3	I=3	G=3	H=4	F=2	C=3	D=4	A=1	Y=1
-W=1	G=1	A=1	M=1	K=1	L=1	Y=1
-W=1	V=2	S=1	T=1	Q=1	R=3	P=2	M=2	N=1	L=1	I=1	G=1	H=1	E=1	C=1	D=1	Y=2
-W=3	S=1	Q=3	P=1	M=1	N=2	L=3	I=2	G=1	H=1	F=1	C=2	Y=1
-W=1	V=1	T=1	P=1	M=1	N=2	K=1	I=2	G=3	H=1	F=1	C=2	D=1	A=1
-V=1	T=1	Q=1	R=1	P=1	N=4	K=2	L=3	I=1	G=2	E=3	F=3	C=1	D=4	A=1
-W=4	G=1	H=2	E=1	F=2	C=2	S=1	D=2	R=1	K=2	L=2	Y=1
-W=2	G=1	H=1	F=2	C=1	S=2	A=1	R=2	P=1	M=1	N=1	I=2
-G=1	H=1	F=2	S=1	C=1	T=1	M=1	N=1	K=1
-W=1	V=2	S=2	Q=1	R=1	M=1	N=2	K=1	L=2	H=1	E=1	F=1	C=1	Y=3
-W=1	V=1	D=1	A=1	R=2	P=1
-W=1	H=1	V=1	S=1	T=1	D=1	R=2	N=2
-W=5	V=3	S=3	T=2	Q=4	R=4	P=4	M=1	N=4	K=3	L=3	I=5	G=4	H=3	E=3	F=5	C=6	D=3	Y=3
-W=1	V=1	S=2	Q=1	L=2	I=1	G=3	H=1	E=1	F=1	C=1	D=1	A=1	Y=1
-W=2	V=3	Q=2	R=3	P=1	N=1	K=3	L=1	I=2	G=3	H=3	E=3	F=2	C=3	D=1	A=2	Y=3
-H=1	E=1	S=1	A=1	Q=2	Y=2
-H=1	E=1	S=1	C=1	A=1	R=2	P=1	M=1	K=1	L=1	Y=1
-W=1	V=1	S=1	T=1	Q=2	P=2	M=2	N=1	K=2	L=1	G=1	H=2	E=2	F=1	D=2	A=1	Y=2
-W=2	S=4	T=1	Q=3	R=1	P=2	M=1	K=3	L=1	G=2	E=4	F=1	C=2	D=3	A=1	Y=2
-H=1	V=1	C=2	S=1	T=1	D=1	Q=1	R=2	P=1	Y=1	I=1
-G=1	W=1	H=1	V=1	F=1	S=1	C=1	D=1	T=1	R=1	P=1
-S=1	T=1	L=1	I=1
-W=5	V=3	T=1	R=3	M=1	N=1	K=2	L=5	I=1	H=3	E=1	F=2	C=4	D=2	A=1	Y=2
-W=1	V=1	R=1	P=4	M=2	N=1	K=4	I=2	G=2	H=2	C=1	D=2	A=1	Y=2
-W=2	S=1	T=1	Q=1	R=1	P=1	M=1	K=1	H=1	F=2	C=1	D=1	A=3	Y=1
-V=2	S=1	T=1	Q=2	R=1	P=1	M=1	K=1	L=1	I=3	G=1	H=1	E=3	F=1	C=2	D=2	A=2	Y=2
-W=1	S=3	T=1	Q=1	P=1	M=1	L=2	I=1	G=1	H=2	E=2	C=3	D=1	Y=1
-G=1	F=1
-W=7	V=4	S=5	T=3	Q=5	R=5	P=8	M=2	N=8	K=2	L=3	I=10	G=2	H=2	E=3	F=4	C=7	D=2	A=3	Y=2
-G=1	H=1	D=1	T=1	P=1	M=1	K=1	I=1
-V=1	T=2	Q=1	R=1	P=2	M=1	K=2	I=1	H=2	E=1	F=2	C=1	D=1	Y=1
-W=4	V=5	S=4	T=1	Q=4	R=2	P=3	M=2	N=2	K=5	L=1	I=4	G=2	E=1	C=2	D=4	A=2	Y=2
-V=1	T=1	R=1	N=1	K=1	L=2	I=2	G=3	H=1	E=2	F=1	D=2	A=1	Y=2
-W=3	V=1	S=1	Q=2	R=3	P=4	M=2	N=1	K=4	L=1	I=2	G=4	H=3	E=2	C=1	D=2	A=1	Y=3
-W=1	S=1	T=1	N=1	K=1	L=1	I=2
-G=1	H=1	V=1	Q=1	A=1	R=1	P=1	M=1	L=1	I=1
-W=3	V=2	S=3	Q=1	R=3	M=1	N=2	K=1	I=2	G=2	H=1	E=1	F=2	C=3	D=1	A=2	Y=2
-W=1	V=3	Q=2	R=3	P=2	M=3	N=1	L=1	I=1	G=1	H=2	F=2	C=2	A=3	Y=2
-W=1	V=2	S=3	T=2	Q=2	R=5	P=7	M=1	N=4	K=4	L=3	I=1	G=3	H=2	E=1	F=2	C=6	D=3	Y=3
-W=1	V=1	T=2	Q=1	N=1	K=1	L=1	I=1	G=3	E=2	F=1	C=1	D=1	Y=1
-W=2	V=1	F=1	D=1	Q=2	R=1	M=3	L=2	I=2
-W=3	V=1	Q=1	R=1	M=1	K=2	I=1	G=3	H=1	E=2	F=2	D=4	A=1	Y=2
-V=1	S=1	T=2	Q=2	R=2	P=3	M=1	N=2	K=1	L=2	I=1	G=2	H=3	E=3	F=2	C=2	D=2	A=1	Y=2
-G=1	W=1	H=2	V=1	F=1	C=1	Q=1	A=1	P=1
-V=1	T=1	Q=1	P=1	N=1	K=1	L=1	G=2	E=1	F=1	C=1	D=1	Y=1
-W=1	E=1	S=1	D=2	Q=1	A=1	R=1	N=1	K=1	Y=1
-W=2	H=1	E=1	F=2	C=1	T=1	D=2	Q=2	A=1	P=1	L=1	I=1
-G=1	W=1	H=2	E=1	F=1	V=2	S=1	T=1	A=1	P=1	Y=1	I=1
-W=3	V=2	S=2	T=2	Q=2	R=5	P=3	M=4	N=3	K=6	L=2	I=3	G=6	H=4	E=4	F=5	C=3	D=4	A=3	Y=1
-E=1	F=1	S=2	T=1	A=1	Q=1	R=1	K=1	L=1	I=1
-W=1	V=1	S=1	T=1	Q=2	R=3	P=2	N=1	L=2	C=1	D=1	A=1	Y=2
-G=1	S=1	D=1	T=1	Q=1	K=1
-W=1	T=2	Q=1	R=3	P=1	M=1	L=1	I=1	H=1	E=1	F=1	C=1	A=1	Y=1
-W=1	F=1	C=1	R=1	M=1	L=1
-V=2	S=1	Q=1	P=1	M=1	K=1	L=1	E=1	F=1	C=1	D=1	A=1	Y=1
-W=3	V=6	S=2	T=2	Q=4	R=2	P=4	M=1	N=6	K=4	L=4	I=2	G=2	H=2	E=2	F=2	C=2	D=4	A=1	Y=1
-H=1	V=2	S=1	D=1	I=1
-W=1	T=1	R=1	P=1	M=2	N=2	K=1	L=2	G=2	H=1	C=1	D=1	A=1	Y=2
-W=2	S=4	T=1	Q=3	R=2	P=2	M=2	N=1	K=1	L=2	I=1	G=2	F=2	C=2	D=3	A=1	Y=1
-G=1	E=1	S=1	C=2	T=2	A=1	P=1	M=2	K=2	L=1	I=1	Y=1
-I=1
-W=1	G=1	C=1	T=2	A=2	Q=2	R=1	N=1	L=1
-W=2	V=4	S=1	T=3	Q=4	P=4	M=1	N=2	K=5	L=3	I=1	G=1	E=2	F=2	C=3	D=1	A=4	Y=2
-W=2	V=2	S=2	T=1	Q=1	R=2	P=1	N=1	K=2	L=1	G=2	H=1	E=1	F=1	C=3	D=3	A=1	Y=2
+W=2	E=7	S=9	R=7	L=10	Y=2
+G=2	D=7	T=6	A=6
+W=6	G=4	S=7	C=3	A=2	Q=2	N=5
+W=1	D=4	A=2	M=5	N=5	K=6	Y=5
+G=5	H=6	C=3	M=4	L=2
+F=2	V=2	T=9	Q=9	A=7	R=6	M=2	I=10
+G=8	E=7	V=7	S=9	D=8	P=2	N=2	Y=2	I=2
+W=2	C=2	S=2	D=5	T=3	M=10	Y=10	I=5
+V=9	C=10	S=7	M=2	N=11	L=11
+R=2	P=2	Y=2
+C=2	A=2	R=4	M=8	Y=6
+H=2	F=1	S=7	A=12	P=6	K=8	I=2
+S=2	D=4	R=4	N=2	I=4
+E=1	V=6	F=2	C=4	T=6	P=2	M=3	K=2	Y=5
+W=7	D=7	L=1	Y=4
+E=9	C=13	T=7	Q=2	A=2	M=4	N=5	K=6
+H=8	F=3	D=2	P=9	Y=5
+G=1	E=2	C=1	R=4
+E=1	V=4	T=2	Q=5	P=4	M=2	Y=4
+V=1	A=3	R=2	P=2	N=3
+T=1	D=6	Q=2	A=2	M=4	N=4	L=3
+F=6	V=1	C=3	T=3	A=9	M=6	I=9
+W=1	H=7	E=6	F=1	S=8	T=5	I=2
+W=2	H=6	S=2	C=2	R=4	P=2
+W=6	G=2	V=8	C=9	N=2	I=7
+G=2	E=2	S=12	C=7	T=5	Y=2
+G=5	E=6	F=5	V=2	Q=2	N=1	L=2
+W=5	G=2	H=2	E=1	V=5	T=9	M=4
+G=6	W=4	S=7	C=12	D=1	A=11	P=2	M=2	Y=2
+H=2	F=5	S=2	C=2	T=2	M=4	L=5	I=6
+G=5	E=3	F=1	D=2	A=2	N=5	Y=1
+V=2	S=7	M=8	N=2	L=5
+H=2	F=3	S=7	C=4	D=6	T=5	M=4	I=6
+D=2	T=4	A=2	N=1	K=8	L=8
+W=7	H=4	S=3	C=2	Q=11	M=6	K=5	Y=6
+W=4	G=6	E=2	V=8	R=2	L=9
+E=6	C=2	T=4	R=6	P=4	Y=10
+F=1	D=2	Y=2
+W=3	E=9	S=2	T=10	D=2	A=5	Y=9	I=8
+G=2	F=3	S=9	T=6	R=1	M=2	L=5
+W=6	V=3	C=10	A=4	R=1	P=2	M=13
+W=4	G=2	C=2	T=6	D=4	R=2
+W=3	V=2	S=6	D=5	T=9	A=2	N=2
+W=6	G=4	V=2	S=3	C=5	T=5	A=2	R=7	P=9	K=8
+E=4	F=4	D=2	Q=5	P=4	M=2
+G=5	T=2	D=3	Q=6	L=1
+W=2	S=2	M=6	N=4	L=3
+S=1	N=2	K=2
+W=3	G=5	E=11	T=6	A=6	N=2
+H=4	E=4	F=6	A=6	R=2
+W=3	E=12	V=2	C=2	Q=7	R=7	P=7	L=7
+H=3	E=2	V=2	T=2	Q=3	A=2	R=3	Y=2
+W=6	E=2	S=2	R=2	P=5	Y=1	I=3
+H=4	C=2	S=3	T=3	D=1	Q=5	A=2
+W=5	G=4	H=2	E=2	R=5	N=2	K=5	Y=9	I=2
+H=8	E=8	V=3	C=4	T=2	N=5
+H=5	V=4	T=2	M=3	L=11
+W=2	S=2	Q=2	N=2
+E=9	S=6	T=12	R=8	K=2
+G=2	H=10	V=5	F=5	S=3	P=2	K=2
+W=7	T=2	K=4	Y=5	I=2
+E=2	F=7	D=6	T=2	P=6
+E=2	F=7	S=4	C=2	T=2	D=3	A=1	M=10	K=6	I=6
+W=4	V=2	Q=6	A=2	P=2	N=4	L=5
+H=2	D=2	I=1
+E=1	F=2	V=1	I=5
+D=2	Q=3	R=4	P=2	M=5	L=3
+G=1	H=8	F=2	V=3	S=2	A=6	N=10	L=5
+G=7	H=4	D=2	P=2	L=4	Y=1	I=2
+W=4	C=4	A=2	Q=2	K=3
+W=1	D=6	T=2	L=2
+G=3	S=5	D=4	M=2	Y=2
+W=4	G=2	H=4	C=2	P=3	M=6	L=2	Y=2
+W=4	V=5	S=3	T=10	A=2	P=2	M=4	K=2
+W=8	S=5	C=2	D=4	L=2
+W=5	H=5	F=2	V=2	A=4	N=2	Y=3	I=2
+C=6	D=2	A=6	R=2	P=3	L=6
+E=2	D=6	A=4	P=4	M=6	K=3
+W=2	E=2	V=5	F=3	C=4	P=1	K=4	Y=4
+H=4	F=2	S=6	M=2	N=3	L=6
+E=4	T=4	R=2	L=1
+G=3	E=2	F=2	A=1	R=2	N=5
+C=2	S=2	D=3	A=7	Q=2
+H=4	E=4	C=1	Y=1
+G=4	E=2	F=5	P=2	N=3
+V=2	F=1	S=4
+E=2	P=1	K=5
+G=8	E=1	F=1	C=2	D=6	P=5	M=5
+G=3	V=5	F=3	A=4	M=2	I=2
+W=1	D=6	Q=10	P=8	K=5	L=2	Y=4
+E=2	S=7	R=3	P=6	I=4
+V=8	S=2	A=7	P=2	K=1	L=4	I=2
+W=2	P=4	N=2	K=2	L=2
+G=5	H=2	E=2	S=3	Q=4	A=3	I=2
+G=2	H=2	Q=2	A=5	R=5	N=9	L=5	I=2
+H=2	E=4	T=2	A=4	P=4	N=4
+W=2	H=4	E=4	F=4	S=2	N=3	K=3	L=4	I=6
+F=2	M=5	K=3
+G=4	Q=1	R=2	I=1
+H=4	F=2	D=4	T=2	Q=1
+W=2	C=1	P=2	L=1
+V=4	D=5	Q=2	M=2	K=5	Y=1
+H=2	Q=2	K=2	L=2
+T=1	N=3	K=3	Y=2
+H=2	M=2	I=6
+W=2	Q=3	R=5	N=3	K=2	Y=2
+D=3	T=1	A=2
+F=2	S=4	P=5	L=3
+W=2	H=2	Y=3
+W=3	H=2	C=1	I=1
+V=2	F=4	D=3	Q=3	Y=4
+Q=2	M=2	Y=6
+V=2	S=2	T=4	R=3	P=5
+G=2	H=2	D=4	T=1	R=3	M=2	Y=2
+V=2	S=2	D=2	T=2	Q=2	A=2	Y=3
+H=4	C=1	R=2
+E=3	F=1	K=1	I=1
+V=2	C=2	S=1	T=4	Y=2
+R=2	P=4	K=1
+F=4	S=2	D=2	T=4	K=2	L=2
+W=1	F=1	Q=4	M=1
+H=5	E=2	S=8	C=2	Q=2
+G=2	W=3	V=1	R=2
+E=4	F=2	C=4	T=2	L=2
+C=1	Q=2	R=1	L=1
+G=3	V=1	Y=1	I=4
+W=2	S=1	N=2	I=2
+H=2	D=2	T=2	I=4
+G=2	H=3	V=1	S=1
+G=7	E=4	C=6	D=2	T=2	M=4	K=8	L=6

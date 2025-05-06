@@ -1,0 +1,87 @@
+START OF LOG FILE
+END OF LOG FILE
+Using a Gamma model with: 8 discrete categories 
+Amino acid replacement matrix is JTT
+Optimizing branch lengths and alpha (Gamma model) ...
+Optimized bbl & alpha no model parametrs need to be optimaized
+The tree in 'Newick tree format' (with the internal nodes labeled)
+was written to a file name called tree.newick.txt
+The tree in 'ANCESTOR tree format' was written to a file name called tree.ancestor.txt
+in bbAlg
+no codon model
+after bbNodeOrderAlg
+after bbfindBestAVDynProg
+after resize
+after _internalSequences resize
+afetr _bestReconstruction resize
+after bbAlg in findAncestralSequencesGammaJoint()
+in bbAlg::bbReconstructAllPositions
+Gamma model. Branch and Bound.
+Reconstructing position: bbl report size = 0
+tmp = 1.24942e-126
+bbl report size = 0
+tmp = 1.17306e-124
+4840199
+bbl report size = 0
+tmp = 2.91082e-119
+4220199
+bbl report size = 0
+tmp = 4.60447e-53
+bbl report size = 0
+tmp = 1.08435e-99
+4080199
+bbl report size = 0
+tmp = 1.31844e-65
+bbl report size = 0
+tmp = 1.4041e-103
+bbl report size = 0
+tmp = 1.42945e-124
+bbl report size = 0
+tmp = 4.33885e-65
+bbl report size = 0
+tmp = 3.03848e-110
+4240199
+bbl report size = 0
+tmp = 6.39271e-126
+4620199
+bbl report size = 0
+tmp = 1.14852e-101
+bbl report size = 0
+tmp = 3.15142e-96
+bbl report size = 0
+tmp = 1.69052e-107
+bbl report size = 0
+tmp = 3.96392e-124
+bbl report size = 0
+tmp = 9.581e-122
+bbl report size = 0
+tmp = 3.52733e-90
+bbl report size = 0
+tmp = 4.05944e-48
+bbl report size = 0
+tmp = 9.7509e-122
+bbl report size = 0
+tmp = 4.57462e-117
+bbl report size = 0
+tmp = 3.56154e-51
+bbl report size = 0
+tmp = 3.20535e-100
+bbl report size = 0
+tmp = 2.59065e-106
+bbl report size = 0
+tmp = 6.8934e-99
+bbl report size = 0
+tmp = 8.8916e-122
+4120199
+bbl report size = 0
+tmp = 2.78707e-92
+bbl report size = 0
+tmp = 2.92547e-84
+bbl report size = 0
+tmp = 8.86635e-109
+4240199
+bbl report size = 0
+tmp = 7.03451e-125
+bbl report size = 0
+tmp = 3.00694e-114
+bbl report size = 0

@@ -1,0 +1,54 @@
+Checking for required files...
+Old JAR exists: YES
+New JAR exists: YES
+Old scripts directory exists: YES
+New scripts directory exists: YES
+Checking FastML output files...
+Checking FastML files for replicate 1...
+  FastML directory exists: /Users/amandaarnold/Desktop/Computational_Genomics/Protein-Residue-Coevolution-Detection/coevolution_evaluation/fastml_output/sim_1
+  Ancestral sequences file exists: /Users/amandaarnold/Desktop/Computational_Genomics/Protein-Residue-Coevolution-Detection/coevolution_evaluation/fastml_output/sim_1/seq.joint.txt
+  Tree file exists: /Users/amandaarnold/Desktop/Computational_Genomics/Protein-Residue-Coevolution-Detection/coevolution_evaluation/fastml_output/sim_1/tree.newick.txt
+Checking simulation files for replicate 1...
+  Simulation directory exists: /Users/amandaarnold/Desktop/Computational_Genomics/Protein-Residue-Coevolution-Detection/coevolution_evaluation/simulations/sim_1
+  MSA file exists: /Users/amandaarnold/Desktop/Computational_Genomics/Protein-Residue-Coevolution-Detection/coevolution_evaluation/simulations/sim_1/sim_1_extant.phy
+  Ground truth file exists: /Users/amandaarnold/Desktop/Computational_Genomics/Protein-Residue-Coevolution-Detection/coevolution_evaluation/simulations/sim_1/ground_truth.tsv
+Checking FastML files for replicate 2...
+  FastML directory exists: /Users/amandaarnold/Desktop/Computational_Genomics/Protein-Residue-Coevolution-Detection/coevolution_evaluation/fastml_output/sim_2
+  Ancestral sequences file exists: /Users/amandaarnold/Desktop/Computational_Genomics/Protein-Residue-Coevolution-Detection/coevolution_evaluation/fastml_output/sim_2/seq.joint.txt
+  Tree file exists: /Users/amandaarnold/Desktop/Computational_Genomics/Protein-Residue-Coevolution-Detection/coevolution_evaluation/fastml_output/sim_2/tree.newick.txt
+Checking simulation files for replicate 2...
+  Simulation directory exists: /Users/amandaarnold/Desktop/Computational_Genomics/Protein-Residue-Coevolution-Detection/coevolution_evaluation/simulations/sim_2
+  MSA file exists: /Users/amandaarnold/Desktop/Computational_Genomics/Protein-Residue-Coevolution-Detection/coevolution_evaluation/simulations/sim_2/sim_2_extant.phy
+  Ground truth file exists: /Users/amandaarnold/Desktop/Computational_Genomics/Protein-Residue-Coevolution-Detection/coevolution_evaluation/simulations/sim_2/ground_truth.tsv
+Checking FastML files for replicate 3...
+  FastML directory exists: /Users/amandaarnold/Desktop/Computational_Genomics/Protein-Residue-Coevolution-Detection/coevolution_evaluation/fastml_output/sim_3
+  Ancestral sequences file exists: /Users/amandaarnold/Desktop/Computational_Genomics/Protein-Residue-Coevolution-Detection/coevolution_evaluation/fastml_output/sim_3/seq.joint.txt
+  Tree file exists: /Users/amandaarnold/Desktop/Computational_Genomics/Protein-Residue-Coevolution-Detection/coevolution_evaluation/fastml_output/sim_3/tree.newick.txt
+Checking simulation files for replicate 3...
+  Simulation directory exists: /Users/amandaarnold/Desktop/Computational_Genomics/Protein-Residue-Coevolution-Detection/coevolution_evaluation/simulations/sim_3
+  MSA file exists: /Users/amandaarnold/Desktop/Computational_Genomics/Protein-Residue-Coevolution-Detection/coevolution_evaluation/simulations/sim_3/sim_3_extant.phy
+  Ground truth file exists: /Users/amandaarnold/Desktop/Computational_Genomics/Protein-Residue-Coevolution-Detection/coevolution_evaluation/simulations/sim_3/ground_truth.tsv
+Checking FastML files for replicate 4...
+  FastML directory exists: /Users/amandaarnold/Desktop/Computational_Genomics/Protein-Residue-Coevolution-Detection/coevolution_evaluation/fastml_output/sim_4
+  Ancestral sequences file exists: /Users/amandaarnold/Desktop/Computational_Genomics/Protein-Residue-Coevolution-Detection/coevolution_evaluation/fastml_output/sim_4/seq.joint.txt
+  Tree file exists: /Users/amandaarnold/Desktop/Computational_Genomics/Protein-Residue-Coevolution-Detection/coevolution_evaluation/fastml_output/sim_4/tree.newick.txt
+Checking simulation files for replicate 4...
+  Simulation directory exists: /Users/amandaarnold/Desktop/Computational_Genomics/Protein-Residue-Coevolution-Detection/coevolution_evaluation/simulations/sim_4
+  MSA file exists: /Users/amandaarnold/Desktop/Computational_Genomics/Protein-Residue-Coevolution-Detection/coevolution_evaluation/simulations/sim_4/sim_4_extant.phy
+  Ground truth file exists: /Users/amandaarnold/Desktop/Computational_Genomics/Protein-Residue-Coevolution-Detection/coevolution_evaluation/simulations/sim_4/ground_truth.tsv
+Checking FastML files for replicate 5...
+  FastML directory exists: /Users/amandaarnold/Desktop/Computational_Genomics/Protein-Residue-Coevolution-Detection/coevolution_evaluation/fastml_output/sim_5
+  Ancestral sequences file exists: /Users/amandaarnold/Desktop/Computational_Genomics/Protein-Residue-Coevolution-Detection/coevolution_evaluation/fastml_output/sim_5/seq.joint.txt
+  Tree file exists: /Users/amandaarnold/Desktop/Computational_Genomics/Protein-Residue-Coevolution-Detection/coevolution_evaluation/fastml_output/sim_5/tree.newick.txt
+Checking simulation files for replicate 5...
+  Simulation directory exists: /Users/amandaarnold/Desktop/Computational_Genomics/Protein-Residue-Coevolution-Detection/coevolution_evaluation/simulations/sim_5
+  MSA file exists: /Users/amandaarnold/Desktop/Computational_Genomics/Protein-Residue-Coevolution-Detection/coevolution_evaluation/simulations/sim_5/sim_5_extant.phy
+  Ground truth file exists: /Users/amandaarnold/Desktop/Computational_Genomics/Protein-Residue-Coevolution-Detection/coevolution_evaluation/simulations/sim_5/ground_truth.tsv
+Checking FastML files for replicate 6...
+  FastML directory exists: /Users/amandaarnold/Desktop/Computational_Genomics/Protein-Residue-Coevolution-Detection/coevolution_evaluation/fastml_output/sim_6
+  Ancestral sequences file exists: /Users/amandaarnold/Desktop/Computational_Genomics/Protein-Residue-Coevolution-Detection/coevolution_evaluation/fastml_output/sim_6/seq.joint.txt
+  Tree file exists: /Users/amandaarnold/Desktop/Computational_Genomics/Protein-Residue-Coevolution-Detection/coevolution_evaluation/fastml_output/sim_6/tree.newick.txt
+Checking simulation files for replicate 6...
+  Simulation directory exists: /Users/amandaarnold/Desktop/Computational_Genomics/Protein-Residue-Coevolution-Detection/coevolution_evaluation/simulations/sim_6
+  MSA file exists: /Users/amandaarnold/Desktop/Computational_Genomics/Protein-Residue-Coevolution-Detection/coevolution_evaluation/simulations/sim_6/sim_6_extant.phy
+  Ground truth file exists: /Users/amandaarnold/Desktop/Computational_Genomics/Protein-Residue-Coevolution-Detection/coevolution_evaluation/simulations/sim_6/ground_truth.tsv
