@@ -39,20 +39,20 @@ do
             # Extract only overlapping predictions and remove the header line
             comm -12 <(cut -f1-2 -d ' ' outputs/$data_dir/$statistical_model/1aoeA_branches_predictions.txt | sort) <(cut -f1-2 -d ' ' outputs/$data_dir/$statistical_model/1aoeA_nodes_predictions.txt | sort) | awk '$1 ~ /^[0-9]+$/ {print $1"\t"$2}' > outputs/$data_dir/$statistical_model/1aoeA_overlap_predictions.txt
 
-#            #### Run the mps module this time to extract ancestral identities for coevolving pairs
-#            # Input is the same PHYLIP sequence alignment and a Newick phylogenetic tree produced from it
-#            # This time a set of tab delimited predicted coevolving pairs are supplies
-#            # These must be entered into a ctl file as follows
-#            echo "MSA_ALIGNMENT_FILE ../aCES_data/$data_dir/1aoeA.phy" > 1aoeA.ctl
-#            echo "TREE_FILE ../aCES_data/$data_dir/tree.newick.txt" >> 1aoeA.ctl
-#            echo "OUTPUT_FILE outputs/$data_dir/$statistical_model/1aoeA" >> 1aoeA.ctl
-#            echo "PAIRS_FILE outputs/$data_dir/$statistical_model/1aoeA_overlap_predictions.txt" >> 1aoeA.ctl
-#            echo "ANCESTRAL_FILE ../aCES_data/$data_dir/seq.joint.txt" >> 1aoeA.ctl
-#
-#            java -Xms3000m -Xmx3000m -jar "mpsAnalysis_Reconstruction_Tracking/mpsAnalysis_Reconstruction_Tracking.jar" 1aoeA.ctl >> logs/$data_dir/1aoeA.log
-#
-#            # Run a filter to exclude pairs with a high proportion of gaps in the alignment
-#            Rscript --vanilla scripts/gap_filter.R ../aCES_data/$data_dir/1aoeA.phy outputs/$data_dir/$statistical_model/1aoeA_overlap_predictions.txt outputs/$data_dir/$statistical_model/1aoeA_filtered_predictions.tsv
+           #### Run the mps module this time to extract ancestral identities for coevolving pairs
+           # Input is the same PHYLIP sequence alignment and a Newick phylogenetic tree produced from it
+           # This time a set of tab delimited predicted coevolving pairs are supplies
+           # These must be entered into a ctl file as follows
+           echo "MSA_ALIGNMENT_FILE ../aCES_data/$data_dir/1aoeA.phy" > 1aoeA.ctl
+           echo "TREE_FILE ../aCES_data/$data_dir/tree.newick.txt" >> 1aoeA.ctl
+           echo "OUTPUT_FILE outputs/$data_dir/$statistical_model/1aoeA" >> 1aoeA.ctl
+           echo "PAIRS_FILE outputs/$data_dir/$statistical_model/1aoeA_overlap_predictions.txt" >> 1aoeA.ctl
+           echo "ANCESTRAL_FILE ../aCES_data/$data_dir/seq.joint.txt" >> 1aoeA.ctl
+
+           java -Xms3000m -Xmx3000m -jar "mpsAnalysis_Reconstruction_Tracking/mpsAnalysis_Reconstruction_Tracking.jar" 1aoeA.ctl >> logs/$data_dir/1aoeA.log
+
+           # Run a filter to exclude pairs with a high proportion of gaps in the alignment
+           Rscript --vanilla scripts/gap_filter.R ../aCES_data/$data_dir/1aoeA.phy outputs/$data_dir/$statistical_model/1aoeA_overlap_predictions.txt outputs/$data_dir/$statistical_model/1aoeA_filtered_predictions.tsv
         done
     done 
 done
