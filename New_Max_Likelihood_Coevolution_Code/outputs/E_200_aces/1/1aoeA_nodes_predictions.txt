@@ -1,0 +1,4 @@
+Res1 Res2 NSingle NDouble Method
+33 55 18 21 1
+71 82 12 21 1
+67 95 5 16 1

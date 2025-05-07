@@ -1,0 +1,188 @@
+replicate,model,method,precision,recall,f1score,true_positives,false_positives,false_negatives
+Loaded 20 ground truth pairs
+1,6,old,0.0000,0.0000,0.0000,0,0,20
+Loaded 20 ground truth pairs
+1,6,new,0.0000,0.0000,0.0000,0,0,20
+Loaded 20 ground truth pairs
+1,3,old,0.0000,0.0000,0.0000,0,0,20
+Loaded 20 ground truth pairs
+1,3,new,0.0000,0.0000,0.0000,0,0,20
+Loaded 20 ground truth pairs
+Loaded 3 prediction pairs
+1,2,old,1.0000,0.1500,0.2609,3,0,17
+Loaded 20 ground truth pairs
+Loaded 18 prediction pairs
+1,2,new,1.0000,0.9000,0.9474,18,0,2
+Loaded 20 ground truth pairs
+1,1,old,0.0000,0.0000,0.0000,0,0,20
+Loaded 20 ground truth pairs
+Loaded 6 prediction pairs
+1,1,new,1.0000,0.3000,0.4615,6,0,14
+Loaded 20 ground truth pairs
+2,6,old,0.0000,0.0000,0.0000,0,0,20
+Loaded 20 ground truth pairs
+2,6,new,0.0000,0.0000,0.0000,0,0,20
+Loaded 20 ground truth pairs
+2,3,old,0.0000,0.0000,0.0000,0,0,20
+Loaded 20 ground truth pairs
+2,3,new,0.0000,0.0000,0.0000,0,0,20
+Loaded 20 ground truth pairs
+Loaded 8 prediction pairs
+2,2,old,1.0000,0.4000,0.5714,8,0,12
+Loaded 20 ground truth pairs
+Loaded 19 prediction pairs
+2,2,new,1.0000,0.9500,0.9744,19,0,1
+Loaded 20 ground truth pairs
+2,1,old,0.0000,0.0000,0.0000,0,0,20
+Loaded 20 ground truth pairs
+Loaded 4 prediction pairs
+2,1,new,1.0000,0.2000,0.3333,4,0,16
+Loaded 20 ground truth pairs
+3,6,old,0.0000,0.0000,0.0000,0,0,20
+Loaded 20 ground truth pairs
+3,6,new,0.0000,0.0000,0.0000,0,0,20
+Loaded 20 ground truth pairs
+3,3,old,0.0000,0.0000,0.0000,0,0,20
+Loaded 20 ground truth pairs
+3,3,new,0.0000,0.0000,0.0000,0,0,20
+Loaded 20 ground truth pairs
+Loaded 4 prediction pairs
+3,2,old,1.0000,0.2000,0.3333,4,0,16
+Loaded 20 ground truth pairs
+Loaded 2 prediction pairs
+3,2,new,1.0000,0.1000,0.1818,2,0,18
+Loaded 20 ground truth pairs
+3,1,old,0.0000,0.0000,0.0000,0,0,20
+Loaded 20 ground truth pairs
+3,1,new,0.0000,0.0000,0.0000,0,0,20
+Loaded 20 ground truth pairs
+4,6,old,0.0000,0.0000,0.0000,0,0,20
+Loaded 20 ground truth pairs
+4,6,new,0.0000,0.0000,0.0000,0,0,20
+Loaded 20 ground truth pairs
+4,3,old,0.0000,0.0000,0.0000,0,0,20
+Loaded 20 ground truth pairs
+Loaded 1 prediction pairs
+4,3,new,1.0000,0.0500,0.0952,1,0,19
+Loaded 20 ground truth pairs
+Loaded 1 prediction pairs
+4,2,old,1.0000,0.0500,0.0952,1,0,19
+Loaded 20 ground truth pairs
+Loaded 6 prediction pairs
+4,2,new,1.0000,0.3000,0.4615,6,0,14
+Loaded 20 ground truth pairs
+4,1,old,0.0000,0.0000,0.0000,0,0,20
+Loaded 20 ground truth pairs
+Loaded 1 prediction pairs
+4,1,new,1.0000,0.0500,0.0952,1,0,19
+Loaded 20 ground truth pairs
+5,6,old,0.0000,0.0000,0.0000,0,0,20
+Loaded 20 ground truth pairs
+5,6,new,0.0000,0.0000,0.0000,0,0,20
+Loaded 20 ground truth pairs
+5,3,old,0.0000,0.0000,0.0000,0,0,20
+Loaded 20 ground truth pairs
+5,3,new,0.0000,0.0000,0.0000,0,0,20
+Loaded 20 ground truth pairs
+Loaded 4 prediction pairs
+5,2,old,1.0000,0.2000,0.3333,4,0,16
+Loaded 20 ground truth pairs
+Loaded 4 prediction pairs
+5,2,new,1.0000,0.2000,0.3333,4,0,16
+Loaded 20 ground truth pairs
+Loaded 2 prediction pairs
+5,1,old,1.0000,0.1000,0.1818,2,0,18
+Loaded 20 ground truth pairs
+Loaded 1 prediction pairs
+5,1,new,1.0000,0.0500,0.0952,1,0,19
+Loaded 20 ground truth pairs
+6,6,old,0.0000,0.0000,0.0000,0,0,20
+Loaded 20 ground truth pairs
+6,6,new,0.0000,0.0000,0.0000,0,0,20
+Loaded 20 ground truth pairs
+6,3,old,0.0000,0.0000,0.0000,0,0,20
+Loaded 20 ground truth pairs
+6,3,new,0.0000,0.0000,0.0000,0,0,20
+Loaded 20 ground truth pairs
+Loaded 7 prediction pairs
+6,2,old,1.0000,0.3500,0.5185,7,0,13
+Loaded 20 ground truth pairs
+Loaded 17 prediction pairs
+6,2,new,0.8235,0.7000,0.7568,14,3,6
+Loaded 20 ground truth pairs
+6,1,old,0.0000,0.0000,0.0000,0,0,20
+Loaded 20 ground truth pairs
+6,1,new,0.0000,0.0000,0.0000,0,0,20
+Loaded 20 ground truth pairs
+7,6,old,0.0000,0.0000,0.0000,0,0,20
+Loaded 20 ground truth pairs
+7,6,new,0.0000,0.0000,0.0000,0,0,20
+Loaded 20 ground truth pairs
+7,3,old,0.0000,0.0000,0.0000,0,0,20
+Loaded 20 ground truth pairs
+7,3,new,0.0000,0.0000,0.0000,0,0,20
+Loaded 20 ground truth pairs
+Loaded 3 prediction pairs
+7,2,old,1.0000,0.1500,0.2609,3,0,17
+Loaded 20 ground truth pairs
+Loaded 16 prediction pairs
+7,2,new,0.7500,0.6000,0.6667,12,4,8
+Loaded 20 ground truth pairs
+Loaded 1 prediction pairs
+7,1,old,1.0000,0.0500,0.0952,1,0,19
+Loaded 20 ground truth pairs
+7,1,new,0.0000,0.0000,0.0000,0,0,20
+Loaded 20 ground truth pairs
+8,6,old,0.0000,0.0000,0.0000,0,0,20
+Loaded 20 ground truth pairs
+8,6,new,0.0000,0.0000,0.0000,0,0,20
+Loaded 20 ground truth pairs
+8,3,old,0.0000,0.0000,0.0000,0,0,20
+Loaded 20 ground truth pairs
+8,3,new,0.0000,0.0000,0.0000,0,0,20
+Loaded 20 ground truth pairs
+Loaded 2 prediction pairs
+8,2,old,1.0000,0.1000,0.1818,2,0,18
+Loaded 20 ground truth pairs
+8,2,new,0.0000,0.0000,0.0000,0,0,20
+Loaded 20 ground truth pairs
+8,1,old,0.0000,0.0000,0.0000,0,0,20
+Loaded 20 ground truth pairs
+8,1,new,0.0000,0.0000,0.0000,0,0,20
+Loaded 20 ground truth pairs
+9,6,old,0.0000,0.0000,0.0000,0,0,20
+Loaded 20 ground truth pairs
+9,6,new,0.0000,0.0000,0.0000,0,0,20
+Loaded 20 ground truth pairs
+9,3,old,0.0000,0.0000,0.0000,0,0,20
+Loaded 20 ground truth pairs
+9,3,new,0.0000,0.0000,0.0000,0,0,20
+Loaded 20 ground truth pairs
+Loaded 7 prediction pairs
+9,2,old,1.0000,0.3500,0.5185,7,0,13
+Loaded 20 ground truth pairs
+Loaded 12 prediction pairs
+9,2,new,0.8333,0.5000,0.6250,10,2,10
+Loaded 20 ground truth pairs
+Loaded 3 prediction pairs
+9,1,old,1.0000,0.1500,0.2609,3,0,17
+Loaded 20 ground truth pairs
+9,1,new,0.0000,0.0000,0.0000,0,0,20
+Loaded 20 ground truth pairs
+10,6,old,0.0000,0.0000,0.0000,0,0,20
+Loaded 20 ground truth pairs
+10,6,new,0.0000,0.0000,0.0000,0,0,20
+Loaded 20 ground truth pairs
+10,3,old,0.0000,0.0000,0.0000,0,0,20
+Loaded 20 ground truth pairs
+10,3,new,0.0000,0.0000,0.0000,0,0,20
+Loaded 20 ground truth pairs
+Loaded 3 prediction pairs
+10,2,old,1.0000,0.1500,0.2609,3,0,17
+Loaded 20 ground truth pairs
+Loaded 16 prediction pairs
+10,2,new,0.8125,0.6500,0.7222,13,3,7
+Loaded 20 ground truth pairs
+10,1,old,0.0000,0.0000,0.0000,0,0,20
+Loaded 20 ground truth pairs
+10,1,new,0.0000,0.0000,0.0000,0,0,20

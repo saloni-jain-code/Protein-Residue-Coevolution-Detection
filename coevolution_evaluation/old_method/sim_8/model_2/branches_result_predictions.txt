@@ -1,0 +1,4 @@
+Res1 Res2 NSingle NDouble Method
+4 5 61 56 2
+16 17 72 57 2
+40 41 60 51 2

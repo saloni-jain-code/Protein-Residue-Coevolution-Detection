@@ -1,0 +1,4 @@
+Res1 Res2 NSingle NDouble Method
+8 9 50 51 1
+30 31 41 73 1
+36 37 54 73 1

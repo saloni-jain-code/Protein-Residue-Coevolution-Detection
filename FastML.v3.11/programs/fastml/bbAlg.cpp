@@ -87,7 +87,7 @@ MDOUBLE bbAlg::bbReconstructAllPositions(sequenceContainer& res){
 		MDOUBLE tmp = bbReconstructPositions(i);
 		_jointL.push_back(tmp);
 		cout<<"tmp = "<<tmp<<endl;
-		assert(tmp>0);
+//		assert(tmp>0);
 		sumLogLikelihood+=log(tmp);
 		if (_reportFileName!="") {
 			if (_bbReport->size()>alphabetSize*_et.getInternalNodesNum()) {

@@ -1,0 +1,804 @@
+#!/bin/bash
+# Modified coevolution evaluation pipeline to use FastML output
+# This script:
+# 1. Uses existing FastML outputs as ancestral sequences
+# 2. Converts FastML seq.joint.txt to PHYLIP format using Biopython
+# 3. Runs both old and new coevolution detection methods
+# 4. Calculates metrics using Python
+# 5. Creates visualizations with Python
+
+#=====================================================================
+# Configuration
+#=====================================================================
+REPLICATES=(1 2 3 4 5 6)          # Specific replicates to analyze
+NUM_PROTEINS=100              # Number of extant sequences
+SEQ_LENGTH=200                # Length of each protein sequence
+P_VALUE_THRESHOLD=0.05        # P-value threshold for predictions
+
+# Known ground truth coevolving pairs - make sure to escape brackets for bash
+COEVOLVING_PAIRS="[(1,2), (3,4), (5,6), (7,8), (9,10),(11,12),(13,14),(15,16),(17,18),(19,20),(21,22),(23,24),(25,26),(27,28),(29,30),(31,32),(33,34),(35,36),(37,38),(39,40)]"
+
+# Path configuration
+PROJECT_ROOT="$(pwd)"
+
+# JAR file paths - update these if needed
+OLD_JAR="${PROJECT_ROOT}/Original_Max_Parsimony_Code/mps_code/dist/mpsAnalysis_Reconstruction_Tracking.jar"
+NEW_JAR="${PROJECT_ROOT}/New_Max_Likelihood_Coevolution_Code/mpsAnalysis_Reconstruction_Tracking/mpsAnalysis_Reconstruction_Tracking.jar"
+
+# R script paths - update these if needed
+OLD_SCRIPTS="${PROJECT_ROOT}/Original_Max_Parsimony_Code/scripts"
+NEW_SCRIPTS="${PROJECT_ROOT}/New_Max_Likelihood_Coevolution_Code/scripts"
+
+# Path to FastML output
+FASTML_OUTPUT="${PROJECT_ROOT}/coevolution_evaluation/fastml_output"
+
+# Path to simulation data
+SIMULATIONS_DIR="${PROJECT_ROOT}/coevolution_evaluation/simulations"
+
+# Base directory for outputs
+BASE_DIR="fastml_results"
+OLD_METHOD_DIR="${BASE_DIR}/old_method"
+NEW_METHOD_DIR="${BASE_DIR}/new_method"
+RESULTS_DIR="${BASE_DIR}/results"
+METRICS_DIR="${BASE_DIR}/metrics"
+PLOTS_DIR="${BASE_DIR}/plots"
+DEBUG_DIR="${BASE_DIR}/debug"
+
+# Java memory settings
+JAVA_MEM="-Xms2000m -Xmx2000m"
+
+# Statistical models to evaluate
+STAT_MODELS=(1 2 3 4 5 6)  # Using just model 2 for simplicity
+
+#=====================================================================
+# Create directory structure
+#=====================================================================
+mkdir -p "${OLD_METHOD_DIR}" "${NEW_METHOD_DIR}"
+mkdir -p "${RESULTS_DIR}" "${METRICS_DIR}" "${PLOTS_DIR}" "${DEBUG_DIR}"
+mkdir -p "${BASE_DIR}/logs"
+
+#=====================================================================
+# Check for dependencies
+#=====================================================================
+echo "Checking for required dependencies..." > "${DEBUG_DIR}/dependency_check.log"
+
+# Check for Biopython
+if python3 -c "import Bio" 2>/dev/null; then
+    echo "Biopython is installed" >> "${DEBUG_DIR}/dependency_check.log"
+else
+    echo "WARNING: Biopython is not installed. Please install it with: pip install biopython" >> "${DEBUG_DIR}/dependency_check.log"
+    echo "WARNING: Biopython is not installed. Install with: pip install biopython"
+fi
+
+#=====================================================================
+# Create FastML to PHYLIP conversion script
+#=====================================================================
+cat > "${BASE_DIR}/convert_fastml_to_phylip.py" << 'EOF'
+#!/usr/bin/env python3
+"""
+Convert FastML seq.joint.txt output to single-line PHYLIP format for MSA input
+"""
+from Bio import SeqIO
+from Bio.Seq import Seq
+from Bio.SeqRecord import SeqRecord
+import sys
+import os
+
+def convert_fastml_to_phylip(input_file, output_file):
+    """Convert FastML seq.joint.txt to single-line PHYLIP format"""
+    # Read the FastML output file
+    seqs = []
+    seq_names = []
+
+    with open(input_file, 'r') as f:
+        current_seq = ""
+        for line in f:
+            line = line.strip()
+            if line.startswith('>'):  # Sequence name line
+                if current_seq and seq_names:  # If we've finished reading a sequence
+                    seqs.append(current_seq)
+                    current_seq = ""
+                seq_names.append(line[1:])  # Remove the '>' character
+            else:  # Sequence data line
+                current_seq += line
+
+        # Add the last sequence
+        if current_seq:
+            seqs.append(current_seq)
+
+    # Write to PHYLIP format manually to ensure single-line format
+    with open(output_file, 'w') as f:
+        # Write header: number of sequences and sequence length
+        f.write(f"{len(seqs)} {len(seqs[0])}\n")
+
+        # Write sequences
+        for i, (name, seq) in enumerate(zip(seq_names, seqs)):
+            # Pad name to ensure alignment (typically 10 characters in PHYLIP)
+            padded_name = name.ljust(10)
+            f.write(f"{padded_name}{seq}\n")
+
+    print(f"Converted {len(seqs)} sequences from {input_file} to single-line PHYLIP format at {output_file}")
+
+def main():
+    if len(sys.argv) != 3:
+        print("Usage: python convert_fastml_to_phylip.py <input_file> <output_file>")
+        sys.exit(1)
+
+    input_file = sys.argv[1]
+    output_file = sys.argv[2]
+
+    convert_fastml_to_phylip(input_file, output_file)
+
+if __name__ == "__main__":
+    main()
+EOF
+
+chmod +x "${BASE_DIR}/convert_fastml_to_phylip.py"
+
+#=====================================================================
+# Check for file availability
+#=====================================================================
+echo "Checking for required files..." > "${DEBUG_DIR}/file_check.log"
+echo "Old JAR exists: $([ -f "${OLD_JAR}" ] && echo "YES" || echo "NO")" >> "${DEBUG_DIR}/file_check.log"
+echo "New JAR exists: $([ -f "${NEW_JAR}" ] && echo "YES" || echo "NO")" >> "${DEBUG_DIR}/file_check.log"
+echo "Old scripts directory exists: $([ -d "${OLD_SCRIPTS}" ] && echo "YES" || echo "NO")" >> "${DEBUG_DIR}/file_check.log"
+echo "New scripts directory exists: $([ -d "${NEW_SCRIPTS}" ] && echo "YES" || echo "NO")" >> "${DEBUG_DIR}/file_check.log"
+
+# Check FastML files
+echo "Checking FastML output files..." >> "${DEBUG_DIR}/file_check.log"
+for replicate in "${REPLICATES[@]}"; do
+    echo "Checking FastML files for replicate ${replicate}..." >> "${DEBUG_DIR}/file_check.log"
+    FASTML_DIR="${FASTML_OUTPUT}/sim_${replicate}"
+
+    if [ -d "${FASTML_DIR}" ]; then
+        echo "  FastML directory exists: ${FASTML_DIR}" >> "${DEBUG_DIR}/file_check.log"
+
+        # Check for ancestral sequences file
+        if [ -f "${FASTML_DIR}/seq.joint.txt" ]; then
+            echo "  Ancestral sequences file exists: ${FASTML_DIR}/seq.joint.txt" >> "${DEBUG_DIR}/file_check.log"
+        else
+            echo "  ERROR: Ancestral sequences file missing: ${FASTML_DIR}/seq.joint.txt" >> "${DEBUG_DIR}/file_check.log"
+        fi
+
+        # Check for tree file
+        if [ -f "${FASTML_DIR}/tree.newick.txt" ]; then
+            echo "  Tree file exists: ${FASTML_DIR}/tree.newick.txt" >> "${DEBUG_DIR}/file_check.log"
+        else
+            echo "  ERROR: Tree file missing: ${FASTML_DIR}/tree.newick.txt" >> "${DEBUG_DIR}/file_check.log"
+        fi
+
+    else
+        echo "  ERROR: FastML directory missing: ${FASTML_DIR}" >> "${DEBUG_DIR}/file_check.log"
+    fi
+
+    # Check simulation data
+    SIM_DIR="${SIMULATIONS_DIR}/sim_${replicate}"
+    echo "Checking simulation files for replicate ${replicate}..." >> "${DEBUG_DIR}/file_check.log"
+
+    if [ -d "${SIM_DIR}" ]; then
+        echo "  Simulation directory exists: ${SIM_DIR}" >> "${DEBUG_DIR}/file_check.log"
+
+        # Check for MSA file
+        if [ -f "${SIM_DIR}/sim_${replicate}_extant.phy" ]; then
+            echo "  MSA file exists: ${SIM_DIR}/sim_${replicate}_extant.phy" >> "${DEBUG_DIR}/file_check.log"
+        else
+            echo "  ERROR: MSA file missing: ${SIM_DIR}/sim_${replicate}_extant.phy" >> "${DEBUG_DIR}/file_check.log"
+        fi
+
+        # Check for ground truth file
+        if [ -f "${SIM_DIR}/ground_truth.tsv" ]; then
+            echo "  Ground truth file exists: ${SIM_DIR}/ground_truth.tsv" >> "${DEBUG_DIR}/file_check.log"
+        else
+            echo "  ERROR: Ground truth file missing: ${SIM_DIR}/ground_truth.tsv" >> "${DEBUG_DIR}/file_check.log"
+        fi
+
+    else
+        echo "  ERROR: Simulation directory missing: ${SIM_DIR}" >> "${DEBUG_DIR}/file_check.log"
+    fi
+done
+
+#=====================================================================
+# Run analysis methods
+#=====================================================================
+echo "===== RUNNING COEVOLUTION DETECTION METHODS ====="
+
+# Function to run analysis with old method (Max Parsimony)
+run_old_method() {
+    local replicate=$1
+    local stat_model=$2
+    local sim_dir="${SIMULATIONS_DIR}/sim_${replicate}"
+    local output_dir="${OLD_METHOD_DIR}/sim_${replicate}/model_${stat_model}"
+
+    mkdir -p "${output_dir}"
+
+    # Create control file for MPS analysis using original simulation data
+    echo "MSA_ALIGNMENT_FILE ${sim_dir}/sim_${replicate}_extant.phy" > mps_old.ctl
+    echo "TREE_FILE ${sim_dir}/sim_${replicate}_extant.newick" >> mps_old.ctl
+    echo "OUTPUT_FILE ${output_dir}/NEW_mps_result" >> mps_old.ctl
+
+    # Check if JAR file exists before running
+    if [ -f "${OLD_JAR}" ]; then
+        echo "Running old method analysis with JAR: ${OLD_JAR}"
+        java ${JAVA_MEM} -jar "${OLD_JAR}" \
+            mps_old.ctl > "${BASE_DIR}/logs/old_method_sim${replicate}_model${stat_model}.log" 2>&1
+
+        # Check if output files were created
+        if [ -f "${output_dir}/NEW_mps_result.binary_branches.tab" ] && [ -f "${output_dir}/NEW_mps_result.binary_nodes.tab" ]; then
+            echo "MPS analysis completed successfully for old method."
+
+            # Check if R scripts directory exists
+            if [ -d "${OLD_SCRIPTS}" ]; then
+                # Run statistical modeling
+                echo "Running branches model with R script: ${OLD_SCRIPTS}/covariation_branches_model.R"
+                Rscript --vanilla "${OLD_SCRIPTS}/covariation_branches_model.R" \
+                    "${output_dir}/NEW_mps_result.binary_branches.tab" \
+                    "${output_dir}/branches_result" \
+                    ${P_VALUE_THRESHOLD} ${stat_model}
+
+                echo "Running nodes model with R script: ${OLD_SCRIPTS}/covariation_nodes_model.R"
+                Rscript --vanilla "${OLD_SCRIPTS}/covariation_nodes_model.R" \
+                    "${output_dir}/NEW_mps_result.binary_nodes.tab" \
+                    "${output_dir}/nodes_result" \
+                    ${P_VALUE_THRESHOLD} ${stat_model}
+
+                # Extract overlapping predictions
+                if [ -f "${output_dir}/branches_result_predictions.txt" ] && [ -f "${output_dir}/nodes_result_predictions.txt" ]; then
+                    echo "Statistical modeling completed successfully for old method."
+                    comm -12 \
+                        <(cut -f1-2 -d ' ' "${output_dir}/branches_result_predictions.txt" | sort) \
+                        <(cut -f1-2 -d ' ' "${output_dir}/nodes_result_predictions.txt" | sort) | \
+                        awk '$1 ~ /^[0-9]+$/ {print $1" "$2}' > "${output_dir}/overlap_predictions.txt"
+
+                    echo "Number of overlapping predictions: $(wc -l < ${output_dir}/overlap_predictions.txt)"
+
+                    # For debugging - show the first few predictions
+                    echo "First few predictions (1-based indexing):"
+                    head -n 5 "${output_dir}/overlap_predictions.txt"
+                else
+                    echo "WARNING: Statistical modeling did not produce prediction files for old method."
+                    touch "${output_dir}/overlap_predictions.txt"
+                fi
+            else
+                echo "WARNING: Old R scripts directory not found. Skipping statistical modeling."
+                touch "${output_dir}/overlap_predictions.txt"
+            fi
+        else
+            echo "WARNING: MPS analysis did not produce output files for old method."
+            touch "${output_dir}/overlap_predictions.txt"
+        fi
+    else
+        echo "WARNING: Old JAR file not found. Skipping old method analysis."
+        touch "${output_dir}/overlap_predictions.txt"
+    fi
+}
+
+# Function to run analysis with new method (Max Likelihood)
+run_new_method() {
+    local replicate=$1
+    local stat_model=$2
+    local sim_dir="${SIMULATIONS_DIR}/sim_${replicate}"
+    local fastml_dir="${FASTML_OUTPUT}/sim_${replicate}"
+    local output_dir="${NEW_METHOD_DIR}/sim_${replicate}/model_${stat_model}"
+
+
+    mkdir -p "${output_dir}"
+
+    # Convert FastML output to PHYLIP format
+    local fastml_seq="${fastml_dir}/seq.joint.txt"
+    local ancestor_file="${fastml_dir}/seq.joint.txt"
+    local msa_phylip="${output_dir}/fastml_converted.phy"
+
+    echo "Converting FastML output to PHYLIP format..."
+    python3 "${BASE_DIR}/convert_fastml_to_phylip.py" "${fastml_seq}" "${msa_phylip}"
+
+    # Check if conversion was successful
+    if [ ! -f "${msa_phylip}" ]; then
+        echo "ERROR: Failed to convert FastML output to PHYLIP format"
+        touch "${output_dir}/overlap_predictions.txt"
+        return 1
+    fi
+
+    # Create control file for MPS analysis with FastML ancestral sequences converted to PHYLIP
+    echo "MSA_ALIGNMENT_FILE ${msa_phylip}" > mps_new.ctl
+#    echo "TREE_FILE ${sim_dir}/sim_${replicate}.newick" >> mps_new.ctl
+#    echo "TREE_FILE ${fastml_dir}/tree.newick.txt" >> mps_new.ctl
+    echo "TREE_FILE ${fastml_dir}/tree.newick.txt" >> mps_new.ctl
+    echo "ANCESTRAL_FILE ${ancestor_file}" >> mps_new.ctl
+    echo "OUTPUT_FILE ${output_dir}/NEW_mps_result" >> mps_new.ctl
+
+    # Check if JAR file exists before running
+    if [ -f "${NEW_JAR}" ]; then
+        echo "Running new method analysis with JAR: ${NEW_JAR}"
+        java ${JAVA_MEM} -jar "${NEW_JAR}" \
+            mps_new.ctl > "${BASE_DIR}/logs/new_method_sim${replicate}_model${stat_model}.log" 2>&1
+
+        # Check if output files were created
+        if [ -f "${output_dir}/NEW_mps_result.binary_branches.tab" ] && [ -f "${output_dir}/NEW_mps_result.binary_nodes.tab" ]; then
+            echo "MPS analysis completed successfully for new method."
+
+            # Check if R scripts directory exists
+            if [ -d "${NEW_SCRIPTS}" ]; then
+                # Run statistical modeling
+                echo "Running branches model with R script: ${NEW_SCRIPTS}/covariation_branches_model.R"
+                Rscript --vanilla "${NEW_SCRIPTS}/covariation_branches_model.R" \
+                    "${output_dir}/NEW_mps_result.binary_branches.tab" \
+                    "${output_dir}/branches_result" \
+                    ${P_VALUE_THRESHOLD} ${stat_model}
+
+                echo "Running nodes model with R script: ${NEW_SCRIPTS}/covariation_nodes_model.R"
+                Rscript --vanilla "${NEW_SCRIPTS}/covariation_nodes_model.R" \
+                    "${output_dir}/NEW_mps_result.binary_nodes.tab" \
+                    "${output_dir}/nodes_result" \
+                    ${P_VALUE_THRESHOLD} ${stat_model}
+
+                # Extract overlapping predictions
+                if [ -f "${output_dir}/branches_result_predictions.txt" ] && [ -f "${output_dir}/nodes_result_predictions.txt" ]; then
+                    echo "Statistical modeling completed successfully for new method."
+                    comm -12 \
+                        <(cut -f1-2 -d ' ' "${output_dir}/branches_result_predictions.txt" | sort) \
+                        <(cut -f1-2 -d ' ' "${output_dir}/nodes_result_predictions.txt" | sort) | \
+                        awk '$1 ~ /^[0-9]+$/ {print $1" "$2}' > "${output_dir}/overlap_predictions.txt"
+
+                    echo "Number of overlapping predictions: $(wc -l < ${output_dir}/overlap_predictions.txt)"
+
+                    # For debugging - show the first few predictions
+                    echo "First few predictions (1-based indexing):"
+                    head -n 5 "${output_dir}/overlap_predictions.txt"
+                else
+                    echo "WARNING: Statistical modeling did not produce prediction files for new method."
+                    touch "${output_dir}/overlap_predictions.txt"
+                fi
+            else
+                echo "WARNING: New R scripts directory not found. Skipping statistical modeling."
+                touch "${output_dir}/overlap_predictions.txt"
+            fi
+        else
+            echo "WARNING: MPS analysis did not produce output files for new method."
+            touch "${output_dir}/overlap_predictions.txt"
+        fi
+    else
+        echo "WARNING: New JAR file not found. Skipping new method analysis."
+        touch "${output_dir}/overlap_predictions.txt"
+    fi
+}
+
+# Run methods for each replicate and statistical model
+for replicate in "${REPLICATES[@]}"; do
+    for stat_model in "${STAT_MODELS[@]}"; do
+        echo "Running replicate ${replicate}, statistical model ${stat_model}..."
+
+        # Run old method (uses simulation data)
+        run_old_method "${replicate}" "${stat_model}"
+
+        # Run new method (uses FastML ancestral sequences)
+        run_new_method "${replicate}" "${stat_model}"
+    done
+done
+
+#=====================================================================
+# Calculate performance metrics using Python
+#=====================================================================
+echo "===== CALCULATING PERFORMANCE METRICS ====="
+
+# Create CSV file for metrics
+echo "replicate,model,method,precision,recall,f1score,true_positives,false_positives,false_negatives" \
+    > "${METRICS_DIR}/all_metrics.csv"
+
+# Python script for metrics calculation with order-agnostic pair matching
+cat > "${BASE_DIR}/calculate_metrics.py" << 'EOF'
+#!/usr/bin/env python3
+"""
+Calculate performance metrics for coevolution detection methods
+"""
+import os
+import sys
+import pandas as pd
+import numpy as np
+
+def calculate_metrics(ground_truth_file, predictions_file):
+    """Calculate performance metrics with order-agnostic pair matching"""
+    # Read ground truth
+    ground_truth_set = set()
+    try:
+        with open(ground_truth_file, 'r') as f:
+            for line in f:
+                parts = line.strip().split()
+                if len(parts) == 2:
+                    try:
+                        pos1 = int(parts[0])
+                        pos2 = int(parts[1])
+                        # Store both orderings to make comparison order-agnostic
+                        ground_truth_set.add((min(pos1, pos2), max(pos1, pos2)))
+                    except ValueError:
+                        print(f"Warning: Could not parse line in ground truth: {line.strip()}")
+        print(f"Loaded {len(ground_truth_set)} ground truth pairs")
+    except Exception as e:
+        print(f"Error reading ground truth file: {e}")
+
+    # Read predictions
+    predictions_set = set()
+    if os.path.exists(predictions_file) and os.path.getsize(predictions_file) > 0:
+        try:
+            with open(predictions_file, 'r') as f:
+                for line in f:
+                    parts = line.strip().split()
+                    if len(parts) == 2:
+                        try:
+                            pos1 = int(parts[0])
+                            pos2 = int(parts[1])
+                            # Store both orderings to make comparison order-agnostic
+                            predictions_set.add((min(pos1, pos2), max(pos1, pos2)))
+                        except ValueError:
+                            print(f"Warning: Could not parse line in predictions: {line.strip()}")
+            print(f"Loaded {len(predictions_set)} prediction pairs")
+        except Exception as e:
+            print(f"Error reading predictions file: {e}")
+
+    # Calculate metrics
+    true_positives = len(ground_truth_set.intersection(predictions_set))
+    false_positives = len(predictions_set - ground_truth_set)
+    false_negatives = len(ground_truth_set - predictions_set)
+
+    precision = true_positives / (true_positives + false_positives) if (true_positives + false_positives) > 0 else 0
+    recall = true_positives / (true_positives + false_negatives) if (true_positives + false_negatives) > 0 else 0
+    f1_score = 2 * (precision * recall) / (precision + recall) if (precision + recall) > 0 else 0
+
+    return {
+        'precision': precision,
+        'recall': recall,
+        'f1score': f1_score,
+        'true_positives': true_positives,
+        'false_positives': false_positives,
+        'false_negatives': false_negatives
+    }
+
+def main():
+    if len(sys.argv) != 5:
+        print("Usage: python calculate_metrics.py <ground_truth_file> <predictions_file> <replicate> <model>")
+        sys.exit(1)
+
+    ground_truth_file = sys.argv[1]
+    predictions_file = sys.argv[2]
+    replicate = sys.argv[3]
+    model = sys.argv[4]
+
+    # Calculate metrics
+    metrics = calculate_metrics(ground_truth_file, predictions_file)
+
+    # Output CSV row: replicate,model,method,precision,recall,f1score,true_positives,false_positives,false_negatives
+    method = "old" if "old_method" in predictions_file else "new"
+    print(f"{replicate},{model},{method},{metrics['precision']:.4f},{metrics['recall']:.4f},{metrics['f1score']:.4f},{metrics['true_positives']},{metrics['false_positives']},{metrics['false_negatives']}")
+
+if __name__ == "__main__":
+    main()
+EOF
+
+chmod +x "${BASE_DIR}/calculate_metrics.py"
+
+# Calculate metrics for each replicate and model
+for replicate in "${REPLICATES[@]}"; do
+    SIM_DIR="${SIMULATIONS_DIR}/sim_${replicate}"
+    GROUND_TRUTH="${SIM_DIR}/ground_truth.tsv"
+
+    for stat_model in "${STAT_MODELS[@]}"; do
+        # Old method metrics
+        OLD_PREDICTIONS="${OLD_METHOD_DIR}/sim_${replicate}/model_${stat_model}/overlap_predictions.txt"
+        if [ -f "${GROUND_TRUTH}" ] && [ -f "${OLD_PREDICTIONS}" ]; then
+            python3 "${BASE_DIR}/calculate_metrics.py" "${GROUND_TRUTH}" "${OLD_PREDICTIONS}" "${replicate}" "${stat_model}" >> "${METRICS_DIR}/all_metrics.csv"
+        else
+            echo "Warning: Missing files for replicate ${replicate}, model ${stat_model} (old method)"
+        fi
+
+        # New method metrics
+        NEW_PREDICTIONS="${NEW_METHOD_DIR}/sim_${replicate}/model_${stat_model}/overlap_predictions.txt"
+        if [ -f "${GROUND_TRUTH}" ] && [ -f "${NEW_PREDICTIONS}" ]; then
+            python3 "${BASE_DIR}/calculate_metrics.py" "${GROUND_TRUTH}" "${NEW_PREDICTIONS}" "${replicate}" "${stat_model}" >> "${METRICS_DIR}/all_metrics.csv"
+        else
+            echo "Warning: Missing files for replicate ${replicate}, model ${stat_model} (new method)"
+        fi
+    done
+done
+
+#=====================================================================
+# Generate visualizations using Python
+#=====================================================================
+echo "===== GENERATING VISUALIZATIONS ====="
+
+cat > "${BASE_DIR}/generate_visualizations.py" << 'EOF'
+#!/usr/bin/env python3
+"""
+Generate visualizations for coevolution results
+"""
+import os
+import sys
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+import matplotlib.colors as mcolors
+from matplotlib.ticker import MaxNLocator
+
+def create_contact_map(ground_truth_file, old_predictions_file, new_predictions_file, output_file, seq_length):
+    """Create contact map visualization comparing methods"""
+    # Read ground truth with proper order-agnostic pair handling
+    ground_truth_set = set()
+    if os.path.exists(ground_truth_file) and os.path.getsize(ground_truth_file) > 0:
+        try:
+            with open(ground_truth_file, 'r') as f:
+                for line in f:
+                    parts = line.strip().split()
+                    if len(parts) == 2:
+                        try:
+                            pos1 = int(parts[0])
+                            pos2 = int(parts[1])
+                            ground_truth_set.add((min(pos1, pos2), max(pos1, pos2)))
+                        except ValueError:
+                            print(f"Warning: Could not parse line in ground truth: {line.strip()}")
+        except Exception as e:
+            print(f"Error reading ground truth file: {e}")
+
+    # Read old method predictions with proper order-agnostic pair handling
+    old_predictions_set = set()
+    if os.path.exists(old_predictions_file) and os.path.getsize(old_predictions_file) > 0:
+        try:
+            with open(old_predictions_file, 'r') as f:
+                for line in f:
+                    parts = line.strip().split()
+                    if len(parts) == 2:
+                        try:
+                            pos1 = int(parts[0])
+                            pos2 = int(parts[1])
+                            old_predictions_set.add((min(pos1, pos2), max(pos1, pos2)))
+                        except ValueError:
+                            print(f"Warning: Could not parse line in old predictions: {line.strip()}")
+        except Exception as e:
+            print(f"Error reading old predictions file: {e}")
+
+    # Read new method predictions with proper order-agnostic pair handling
+    new_predictions_set = set()
+    if os.path.exists(new_predictions_file) and os.path.getsize(new_predictions_file) > 0:
+        try:
+            with open(new_predictions_file, 'r') as f:
+                for line in f:
+                    parts = line.strip().split()
+                    if len(parts) == 2:
+                        try:
+                            pos1 = int(parts[0])
+                            pos2 = int(parts[1])
+                            new_predictions_set.add((min(pos1, pos2), max(pos1, pos2)))
+                        except ValueError:
+                            print(f"Warning: Could not parse line in new predictions: {line.strip()}")
+        except Exception as e:
+            print(f"Error reading new predictions file: {e}")
+
+    # Create figure with 1x3 subplots
+    fig, axes = plt.subplots(1, 3, figsize=(18, 6))
+
+    # Create contact maps
+    maps = []
+    for i, (title, predictions_set) in enumerate([
+        ('Ground Truth', ground_truth_set),
+        ('Old Method', old_predictions_set),
+        ('New Method', new_predictions_set)
+    ]):
+        # Create contact map
+        contact_map = np.zeros((seq_length, seq_length))
+
+        # Fill in contact map
+        for pos1, pos2 in predictions_set:
+            # Convert from 1-based to 0-based indexing for the plot
+            pos1_idx = pos1 - 1
+            pos2_idx = pos2 - 1
+
+            # Check bounds
+            if 0 <= pos1_idx < seq_length and 0 <= pos2_idx < seq_length:
+                contact_map[pos1_idx, pos2_idx] = 1
+                contact_map[pos2_idx, pos1_idx] = 1  # Mirror
+
+        # Plot contact map
+        im = axes[i].imshow(contact_map, cmap='Blues', origin='lower')
+        axes[i].set_title(title)
+        axes[i].set_xlabel('Position (0-based indices for plot)')
+        axes[i].set_ylabel('Position (0-based indices for plot)')
+        maps.append(contact_map)
+
+    # Adjust layout
+    plt.tight_layout(rect=[0, 0.05, 1, 0.95])
+
+    # Save figure
+    plt.savefig(output_file, dpi=300)
+    plt.close()
+
+    # Return the maps for potential further analysis
+    return maps
+
+def create_metric_plots(metrics_file, output_dir):
+    """Create plots from metrics data with proper data type handling"""
+    if not os.path.exists(metrics_file):
+        print(f"Error: Metrics file {metrics_file} not found")
+        return None
+
+    # Read metrics data with proper type conversion
+    try:
+        metrics = pd.read_csv(metrics_file)
+
+        # Ensure numeric columns are properly typed
+        for col in ["precision", "recall", "f1score", "true_positives", "false_positives", "false_negatives"]:
+            metrics[col] = pd.to_numeric(metrics[col], errors="coerce")
+
+        print("Data types after conversion:")
+        print(metrics.dtypes)
+
+        if metrics.empty:
+            print("Warning: Metrics file is empty")
+            return None
+    except Exception as e:
+        print(f"Error reading metrics file: {e}")
+        return None
+
+    # Create output directory
+    os.makedirs(output_dir, exist_ok=True)
+
+    # Create a simple summary
+    try:
+        summary = metrics.groupby('method')[['precision', 'recall', 'f1score',
+                                            'true_positives', 'false_positives',
+                                            'false_negatives']].mean().reset_index()
+        summary.to_csv(os.path.join(output_dir, 'summary_statistics.csv'), index=False)
+    except Exception as e:
+        print(f"Error creating summary statistics: {e}")
+        return None
+
+    # Create plots
+    try:
+        # 1. Bar chart comparing methods (simpler version)
+        plt.figure(figsize=(10, 6))
+
+        methods = metrics["method"].unique()
+        x = np.arange(len(methods))
+        width = 0.25
+
+        precision_means = [metrics[metrics["method"] == m]["precision"].mean() for m in methods]
+        recall_means = [metrics[metrics["method"] == m]["recall"].mean() for m in methods]
+        f1_means = [metrics[metrics["method"] == m]["f1score"].mean() for m in methods]
+
+        plt.bar(x - width, precision_means, width, label="Precision")
+        plt.bar(x, recall_means, width, label="Recall")
+        plt.bar(x + width, f1_means, width, label="F1 Score")
+
+        plt.xlabel("Method")
+        plt.ylabel("Score")
+        plt.title("Coevolution Detection Performance")
+        plt.xticks(x, methods)
+        plt.legend()
+        plt.grid(axis="y", linestyle="--", alpha=0.7)
+
+        plt.savefig(os.path.join(output_dir, "method_comparison.png"), dpi=300)
+        plt.close()
+
+        # 2. Box plot of F1 scores by method
+        plt.figure(figsize=(8, 6))
+        plt.boxplot([metrics[metrics.method == 'old']['f1score'],
+                    metrics[metrics.method == 'new']['f1score']],
+                    labels=['Old Method', 'New Method'])
+        plt.title('F1 Score Comparison')
+        plt.ylabel('F1 Score')
+        plt.grid(axis='y', linestyle='--', alpha=0.7)
+        plt.tight_layout()
+        plt.savefig(os.path.join(output_dir, 'f1_score_boxplot.png'), dpi=300)
+        plt.close()
+
+        # 3. True positives comparison
+        plt.figure(figsize=(8, 6))
+        tp_by_method = metrics.groupby('method')['true_positives'].sum()
+        tp_by_method.plot(kind='bar')
+        plt.title('Total True Positives by Method')
+        plt.ylabel('Count')
+        plt.grid(axis='y', linestyle='--', alpha=0.7)
+        plt.tight_layout()
+        plt.savefig(os.path.join(output_dir, 'true_positives.png'), dpi=300)
+        plt.close()
+
+    except Exception as e:
+        print(f"Error creating plots: {e}")
+
+    return summary
+
+def main():
+    if len(sys.argv) < 6:
+        print("Usage: python generate_visualizations.py <metrics_file> <output_dir> <simulations_dir> <old_method_dir> <new_method_dir> <seq_length>")
+        sys.exit(1)
+
+    metrics_file = sys.argv[1]
+    output_dir = sys.argv[2]
+    simulations_dir = sys.argv[3]
+    old_method_dir = sys.argv[4]
+    new_method_dir = sys.argv[5]
+    seq_length = int(sys.argv[6])
+
+    # Create metric plots (with robust error handling)
+    summary = create_metric_plots(metrics_file, output_dir)
+    if summary is not None:
+        print("Created metric plots successfully.")
+
+    # Create contact maps for each replicate
+    try:
+        # Get list of replicates from the old_method_dir
+        replicate_dirs = [d for d in os.listdir(old_method_dir) if d.startswith('sim_')]
+        for replicate_dir in replicate_dirs:
+            replicate = replicate_dir.split('_')[1]
+
+            ground_truth_file = os.path.join(simulations_dir, f"sim_{replicate}", "ground_truth.tsv")
+
+            # Use model 2 by default
+            model = 2
+            old_predictions_file = os.path.join(old_method_dir, f'sim_{replicate}', f'model_{model}', 'overlap_predictions.txt')
+            new_predictions_file = os.path.join(new_method_dir, f'sim_{replicate}', f'model_{model}', 'overlap_predictions.txt')
+
+            output_file = os.path.join(output_dir, f'contact_map_replicate_{replicate}.png')
+
+            # Verify files exist before creating contact map
+            if not os.path.exists(ground_truth_file):
+                print(f"Warning: Ground truth file not found for replicate {replicate}")
+                continue
+
+            maps = create_contact_map(ground_truth_file, old_predictions_file, new_predictions_file, output_file, seq_length)
+            print(f"Created contact map for replicate {replicate}.")
+    except Exception as e:
+        print(f"Error creating contact maps: {e}")
+
+    print("Visualization complete.")
+
+if __name__ == "__main__":
+    main()
+EOF
+
+chmod +x "${BASE_DIR}/generate_visualizations.py"
+
+# Run visualization script
+python3 "${BASE_DIR}/generate_visualizations.py" \
+    "${METRICS_DIR}/all_metrics.csv" \
+    "${PLOTS_DIR}" \
+    "${SIMULATIONS_DIR}" \
+    "${OLD_METHOD_DIR}" \
+    "${NEW_METHOD_DIR}" \
+    "${SEQ_LENGTH}"
+
+#=====================================================================
+# Generate final report
+#=====================================================================
+echo "===== GENERATING FINAL REPORT ====="
+
+cat > "${RESULTS_DIR}/evaluation_report.md" << EOF
+# Coevolution Detection Method Evaluation Report
+
+## Overview
+This report compares the performance of old and new coevolution detection methods using FastML ancestral sequences.
+
+## Dataset
+- Original simulation replicates: ${REPLICATES[*]}
+- FastML ancestral sequences for replicates: ${REPLICATES[*]}
+- Sequence Length: ${SEQ_LENGTH}
+- P-Value Threshold: ${P_VALUE_THRESHOLD}
+
+## Methods
+- **Old Method**: Uses maximum parsimony for ancestral reconstruction from simulation data
+- **New Method**: Uses maximum likelihood with FastML ancestral sequences (converted from FASTA to PHYLIP format)
+
+## Modifications
+- Added Biopython-based conversion from FastML seq.joint.txt (FASTA format) to PHYLIP format
+- Used the converted PHYLIP file as the MSA input for the new method
+
+## Performance Summary
+$(cat "${PLOTS_DIR}/summary_statistics.csv" 2>/dev/null || echo "Performance metrics calculation pending.")
+
+## Visualizations
+- Contact maps: See plots/contact_map_replicate_*.png
+- Method comparison: See plots/method_comparison.png
+- F1 score comparison: See plots/f1_score_boxplot.png
+
+EOF
+
+echo "===== EVALUATION COMPLETE ====="
+echo "Results available in ${BASE_DIR}"
+echo "Final report: ${RESULTS_DIR}/evaluation_report.md"
+echo "Performance visualizations: ${PLOTS_DIR}"

@@ -1,0 +1,402 @@
+# created on Mon May  5 20:58:00 2025
+name 	parent  child 
+Seq_1  N8     
+Seq_2  N8     
+Seq_3  N9     
+Seq_4  N9     
+Seq_5  N11    
+Seq_6  N11    
+Seq_7  N12    
+Seq_8  N12    
+Seq_9  N15    
+Seq_10  N15    
+Seq_11  N16    
+Seq_12  N16    
+Seq_13  N18    
+Seq_14  N18    
+Seq_15  N19    
+Seq_16  N19    
+Seq_17  N23    
+Seq_18  N23    
+Seq_19  N24    
+Seq_20  N24    
+Seq_21  N26    
+Seq_22  N26    
+Seq_23  N27    
+Seq_24  N27    
+Seq_25  N30    
+Seq_26  N30    
+Seq_27  N31    
+Seq_28  N31    
+Seq_29  N33    
+Seq_30  N33    
+Seq_31  N34    
+Seq_32  N34    
+Seq_33  N39    
+Seq_34  N39    
+Seq_35  N40    
+Seq_36  N40    
+Seq_37  N42    
+Seq_38  N42    
+Seq_39  N43    
+Seq_40  N43    
+Seq_41  N46    
+Seq_42  N46    
+Seq_43  N47    
+Seq_44 N47    
+Seq_45 N49    
+Seq_46 N49    
+Seq_47 N50    
+Seq_48 N50    
+Seq_49 N54    
+Seq_50 N54    
+Seq_51 N55    
+Seq_52 N55    
+Seq_53 N57    
+Seq_54 N57    
+Seq_55 N58    
+Seq_56 N58    
+Seq_57 N61    
+Seq_58 N61    
+Seq_59 N62    
+Seq_60 N62    
+Seq_61 N64    
+Seq_62 N64    
+Seq_63 N65    
+Seq_64 N65    
+Seq_65 N71    
+Seq_66 N71    
+Seq_67 N72    
+Seq_68 N72    
+Seq_69 N74    
+Seq_70 N74    
+Seq_71 N75    
+Seq_72 N75    
+Seq_73 N78    
+Seq_74 N78    
+Seq_75 N79    
+Seq_76 N79    
+Seq_77 N81    
+Seq_78 N81    
+Seq_79 N82    
+Seq_80 N82    
+Seq_81 N86    
+Seq_82 N86    
+Seq_83 N87    
+Seq_84 N87    
+Seq_85 N89    
+Seq_86 N89    
+Seq_87 N90    
+Seq_88 N90    
+Seq_89 N93    
+Seq_90 N93    
+Seq_91 N94    
+Seq_92 N94    
+Seq_93 N96    
+Seq_94 N96    
+Seq_95 N97    
+Seq_96 N97    
+Seq_97 N102   
+Seq_98 N102   
+Seq_99 N103   
+Seq_100 N103   
+Seq_101 N105   
+Seq_102 N105   
+Seq_103 N106   
+Seq_104 N106   
+Seq_105 N109   
+Seq_106 N109   
+Seq_107 N110   
+Seq_108 N110   
+Seq_109 N112   
+Seq_110 N112   
+Seq_111 N113   
+Seq_112 N113   
+Seq_113 N117   
+Seq_114 N117   
+Seq_115 N118   
+Seq_116 N118   
+Seq_117 N120   
+Seq_118 N120   
+Seq_119 N121   
+Seq_120 N121   
+Seq_121 N124   
+Seq_122 N124   
+Seq_123 N125   
+Seq_124 N125   
+Seq_125 N127   
+Seq_126 N127   
+Seq_127 N128   
+Seq_128 N128   
+Seq_129 N135   
+Seq_130 N135   
+Seq_131 N136   
+Seq_132 N136   
+Seq_133 N138   
+Seq_134 N138   
+Seq_135 N139   
+Seq_136 N139   
+Seq_137 N142   
+Seq_138 N142   
+Seq_139 N143   
+Seq_140 N143   
+Seq_141 N145   
+Seq_142 N145   
+Seq_143 N146   
+Seq_144 N146   
+Seq_145   N149   
+Seq_146   N149   
+Seq_147   N150   
+Seq_148   N150   
+Seq_149   N152   
+Seq_150   N152   
+Seq_151   N153   
+Seq_152   N153   
+Seq_153   N157   
+Seq_154  N157   
+Seq_155  N158   
+Seq_156  N158   
+Seq_157  N160   
+Seq_158  N160   
+Seq_159  N161   
+Seq_160  N161   
+Seq_161  N164   
+Seq_162  N164   
+Seq_163  N165   
+Seq_164  N165   
+Seq_165  N167   
+Seq_166  N167   
+Seq_167  N168   
+Seq_168  N168   
+Seq_169  N173   
+Seq_170  N173   
+Seq_171  N174   
+Seq_172  N174   
+Seq_173  N176   
+Seq_174  N176   
+Seq_175  N177   
+Seq_176  N177   
+Seq_177  N180   
+Seq_178  N180   
+Seq_179  N181   
+Seq_180  N181   
+Seq_181  N183   
+Seq_182  N183   
+Seq_183  N184   
+Seq_184  N184   
+Seq_185  N188   
+Seq_186  N188   
+Seq_187  N189   
+Seq_188  N189   
+Seq_189  N191   
+Seq_190  N191   
+Seq_191  N192   
+Seq_192  N192   
+Seq_193  N195   
+Seq_194  N195   
+Seq_195  N196   
+Seq_196  N196   
+Seq_197  N198   
+Seq_198  N198   
+Seq_199  N199   
+Seq_200  N199   
+N1   root! N2 N129
+N2   N1      N3 N66
+N3   N2      N4 N35
+N4   N3      N5 N20
+N5   N4      N6 N13
+N6   N5      N7 N10
+N7   N6      N8 N9
+N8   N7      Seq_1 Seq_2
+N9   N7      Seq_3 Seq_4
+N10  N6      N11 N12
+N11  N10     Seq_5 Seq_6
+N12  N10     Seq_7 Seq_8
+N13  N5      N14 N17
+N14  N13     N15 N16
+N15  N14     Seq_9 Seq_10
+N16  N14     Seq_11 Seq_12
+N17  N13     N18 N19
+N18  N17     Seq_13 Seq_14
+N19  N17     Seq_15 Seq_16
+N20  N4      N21 N28
+N21  N20     N22 N25
+N22  N21     N23 N24
+N23  N22     Seq_17 Seq_18
+N24  N22     Seq_19 Seq_20
+N25  N21     N26 N27
+N26  N25     Seq_21 Seq_22
+N27  N25     Seq_23 Seq_24
+N28  N20     N29 N32
+N29  N28     N30 N31
+N30  N29     Seq_25 Seq_26
+N31  N29     Seq_27 Seq_28
+N32  N28     N33 N34
+N33  N32     Seq_29 Seq_30
+N34  N32     Seq_31 Seq_32
+N35  N3      N36 N51
+N36  N35     N37 N44
+N37  N36     N38 N41
+N38  N37     N39 N40
+N39  N38     Seq_33 Seq_34
+N40  N38     Seq_35 Seq_36
+N41  N37     N42 N43
+N42  N41     Seq_37 Seq_38
+N43  N41     Seq_39 Seq_40
+N44  N36     N45 N48
+N45  N44     N46 N47
+N46  N45     Seq_41 Seq_42
+N47  N45     Seq_43 Seq_44
+N48  N44     N49 N50
+N49  N48     Seq_45 Seq_46
+N50  N48     Seq_47 Seq_48
+N51  N35     N52 N59
+N52  N51     N53 N56
+N53  N52     N54 N55
+N54  N53     Seq_49 Seq_50
+N55  N53     Seq_51 Seq_52
+N56  N52     N57 N58
+N57  N56     Seq_53 Seq_54
+N58  N56     Seq_55 Seq_56
+N59  N51     N60 N63
+N60  N59     N61 N62
+N61  N60     Seq_57 Seq_58
+N62  N60     Seq_59 Seq_60
+N63  N59     N64 N65
+N64  N63     Seq_61 Seq_62
+N65  N63     Seq_63 Seq_64
+N66  N2      N67 N98
+N67  N66     N68 N83
+N68  N67     N69 N76
+N69  N68     N70 N73
+N70  N69     N71 N72
+N71  N70     Seq_65 Seq_66
+N72  N70     Seq_67 Seq_68
+N73  N69     N74 N75
+N74  N73     Seq_69 Seq_70
+N75  N73     Seq_71 Seq_72
+N76  N68     N77 N80
+N77  N76     N78 N79
+N78  N77     Seq_73 Seq_74
+N79  N77     Seq_75 Seq_76
+N80  N76     N81 N82
+N81  N80     Seq_77 Seq_78
+N82  N80     Seq_79 Seq_80
+N83  N67     N84 N91
+N84  N83     N85 N88
+N85  N84     N86 N87
+N86  N85     Seq_81 Seq_82
+N87  N85     Seq_83 Seq_84
+N88  N84     N89 N90
+N89  N88     Seq_85 Seq_86
+N90  N88     Seq_87 Seq_88
+N91  N83     N92 N95
+N92  N91     N93 N94
+N93  N92     Seq_89 Seq_90
+N94  N92     Seq_91 Seq_92
+N95  N91     N96 N97
+N96  N95     Seq_93 Seq_94
+N97  N95     Seq_95 Seq_96
+N98  N66     N99 N114
+N99  N98     N100 N107
+N100 N99     N101 N104
+N101 N100    N102 N103
+N102 N101    Seq_97 Seq_98
+N103 N101    Seq_99 Seq_100
+N104 N100    N105 N106
+N105 N104    Seq_101 Seq_102
+N106 N104    Seq_103 Seq_104
+N107 N99     N108 N111
+N108 N107    N109 N110
+N109 N108    Seq_105 Seq_106
+N110 N108    Seq_107 Seq_108
+N111 N107    N112 N113
+N112 N111    Seq_109 Seq_110
+N113 N111    Seq_111 Seq_112
+N114 N98     N115 N122
+N115 N114    N116 N119
+N116 N115    N117 N118
+N117 N116    Seq_113 Seq_114
+N118 N116    Seq_115 Seq_116
+N119 N115    N120 N121
+N120 N119    Seq_117 Seq_118
+N121 N119    Seq_119 Seq_120
+N122 N114    N123 N126
+N123 N122    N124 N125
+N124 N123    Seq_121 Seq_122
+N125 N123    Seq_123 Seq_124
+N126 N122    N127 N128
+N127 N126    Seq_125 Seq_126
+N128 N126    Seq_127 Seq_128
+N129 N1      N130 N169
+N130 N129    N131 N154
+N131 N130    N132 N147
+N132 N131    N133 N140
+N133 N132    N134 N137
+N134 N133    N135 N136
+N135 N134    Seq_129 Seq_130
+N136 N134    Seq_131 Seq_132
+N137 N133    N138 N139
+N138 N137    Seq_133 Seq_134
+N139 N137    Seq_135 Seq_136
+N140 N132    N141 N144
+N141 N140    N142 N143
+N142 N141    Seq_137 Seq_138
+N143 N141    Seq_139 Seq_140
+N144 N140    N145 N146
+N145 N144    Seq_141 Seq_142
+N146 N144    Seq_143 Seq_144
+N147 N131    N148 N151
+N148 N147    N149 N150
+N149 N148    Seq_145 Seq_146
+N150 N148    Seq_147 Seq_148
+N151 N147    N152 N153
+N152 N151    Seq_149 Seq_150
+N153 N151    Seq_151 Seq_152
+N154 N130    N155 N162
+N155 N154    N156 N159
+N156 N155    N157 N158
+N157 N156    Seq_153 Seq_154
+N158 N156    Seq_155 Seq_156
+N159 N155    N160 N161
+N160 N159    Seq_157 Seq_158
+N161 N159    Seq_159 Seq_160
+N162 N154    N163 N166
+N163 N162    N164 N165
+N164 N163    Seq_161 Seq_162
+N165 N163    Seq_163 Seq_164
+N166 N162    N167 N168
+N167 N166    Seq_165 Seq_166
+N168 N166    Seq_167 Seq_168
+N169 N129    N170 N185
+N170 N169    N171 N178
+N171 N170    N172 N175
+N172 N171    N173 N174
+N173 N172    Seq_169 Seq_170
+N174 N172    Seq_171 Seq_172
+N175 N171    N176 N177
+N176 N175    Seq_173 Seq_174
+N177 N175    Seq_175 Seq_176
+N178 N170    N179 N182
+N179 N178    N180 N181
+N180 N179    Seq_177 Seq_178
+N181 N179    Seq_179 Seq_180
+N182 N178    N183 N184
+N183 N182    Seq_181 Seq_182
+N184 N182    Seq_183 Seq_184
+N185 N169    N186 N193
+N186 N185    N187 N190
+N187 N186    N188 N189
+N188 N187    Seq_185 Seq_186
+N189 N187    Seq_187 Seq_188
+N190 N186    N191 N192
+N191 N190    Seq_189 Seq_190
+N192 N190    Seq_191 Seq_192
+N193 N185    N194 N197
+N194 N193    N195 N196
+N195 N194    Seq_193 Seq_194
+N196 N194    Seq_195 Seq_196
+N197 N193    N198 N199
+N198 N197    Seq_197 Seq_198
+N199 N197    Seq_199 Seq_200
+

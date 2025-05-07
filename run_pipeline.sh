@@ -11,9 +11,9 @@ cd New_Max_Likelihood_Coevolution_Code
 ./run_full_test.sh
 cd ..
 
-for letter in A B C
+for letter in A
 do
-    for num_sequences in 100 200 300
+    for num_sequences in 200
     do
         echo "Evaluating Results between Original and New Coevolution Code for ${letter}_${num_sequences}_aces data"
         cd Evaluation

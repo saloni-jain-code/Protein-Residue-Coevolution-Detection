@@ -1,0 +1,4 @@
+Res1 Res2 NSingle NDouble Method
+12 23 46 15 2
+11 16 39 45 2
+62 77 53 10 2

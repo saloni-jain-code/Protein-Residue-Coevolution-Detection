@@ -1,0 +1,2 @@
+Res1 Res2 NSingle NDouble Method
+20 21 64 28 6

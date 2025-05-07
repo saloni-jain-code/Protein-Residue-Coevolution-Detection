@@ -1,0 +1,2 @@
+Res1 Res2 NSingle NDouble Method
+27 44 72 6 5
