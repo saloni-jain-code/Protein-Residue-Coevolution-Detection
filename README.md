@@ -88,6 +88,6 @@ Then to run the code, navigate to the `New_Max_Likelihood_Coevolution_Code` fold
 ```
 This will create 7 different folders under `outputs/$data_dir` for each of the statistical models, and the predictions will appear in `outputs/$data_dir/$statistical_model/1aoeA_filtered_predictions.tsv`.
 
-## Running the Entire Pipeline
+
 
 
